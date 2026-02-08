@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin Login - SD Negeri Kota 01">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <title>Admin Login - SD Negeri Kota 01</title>
+    <style>
+        :root {
+            --eduBlue-main: #1E40AF;
+            --eduBlue-light: #3B82F6;
+            --sunJoy: #FCD34D;
+            --careGreen: #10B981;
+            --softBlack: #1F2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, var(--eduBlue-main), var(--eduBlue-light));
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .login-header {
+            background: linear-gradient(135deg, var(--eduBlue-main), var(--eduBlue-light));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .login-logo {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .login-header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .login-header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .login-body {
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: var(--softBlack);
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--eduBlue-main);
+            box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.1);
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .remember-me input {
+            width: auto;
+            margin: 0;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--eduBlue-main), var(--eduBlue-light));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.3);
+        }
+
+        .login-btn:active {
+            transform: translateY(0);
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        .forgot-password a {
+            color: var(--eduBlue-main);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 24px 0;
+            color: #d1d5db;
+            font-size: 12px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #e5e7eb;
+        }
+
+        .divider span {
+            margin: 0 12px;
+        }
+
+        .guest-btn {
+            width: 100%;
+            padding: 12px;
+            background: #f3f4f6;
+            color: var(--softBlack);
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .guest-btn:hover {
+            background: #e5e7eb;
+            border-color: #d1d5db;
+        }
+
+        .error {
+            color: #dc2626;
+            font-size: 13px;
+            margin-top: 4px;
+            display: none;
+        }
+
+        .error.show {
+            display: block;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            color: var(--eduBlue-main);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        .demo-credentials {
+            background: #f0fdf4;
+            border: 1px solid #86efac;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 12px;
+            color: #065f46;
+        }
+
+        .demo-credentials strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <div class="login-logo">👨‍💼</div>
+            <h1>Admin Panel</h1>
+            <p>SD Negeri Kota 01</p>
+        </div>
+
+        <div class="login-body">
+            <div class="demo-credentials">
+                <strong>🔓 Demo Credentials:</strong>
+                Username: admin<br>
+                Password: admin123
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Masukkan username" required>
+                    <div class="error" id="usernameError">Username tidak boleh kosong</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Masukkan password" required>
+                    <div class="error" id="passwordError">Password tidak boleh kosong</div>
+                </div>
+
+                <div class="remember-me">
+                    <input type="checkbox" id="rememberMe">
+                    <label for="rememberMe" style="margin: 0;">Ingat saya</label>
+                </div>
+
+                <button type="submit" class="login-btn">🔐 Login</button>
+
+                <div class="forgot-password">
+                    <a href="#" onclick="alert('Hubungi administrator untuk reset password')">Lupa password?</a>
+                </div>
+            </form>
+
+            <div class="divider">
+                <span>ATAU</span>
+            </div>
+
+            <button class="guest-btn" onclick="loginAsGuest()">👁️ Akses Sebagai Guest</button>
+
+            <div class="back-link">
+                <a href="index.html">← Kembali ke Website</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Default credentials
+        const ADMIN_USERS = {
+            admin: 'admin123',
+            operator: 'operator123'
+        };
+
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+
+            // Clear errors
+            document.getElementById('usernameError').classList.remove('show');
+            document.getElementById('passwordError').classList.remove('show');
+
+            // Validate
+            let isValid = true;
+            
+            if (!username) {
+                document.getElementById('usernameError').classList.add('show');
+                isValid = false;
+            }
+
+            if (!password) {
+                document.getElementById('passwordError').classList.add('show');
+                isValid = false;
+            }
+
+            if (!isValid) return;
+
+            // Check credentials
+            if (ADMIN_USERS[username] && ADMIN_USERS[username] === password) {
+                // Login success
+                localStorage.setItem('adminLoggedIn', 'true');
+                localStorage.setItem('adminUser', username);
+                localStorage.setItem('adminLoginTime', Date.now().toString());
+
+                if (document.getElementById('rememberMe').checked) {
+                    localStorage.setItem('adminRemember', 'true');
+                    localStorage.setItem('adminRememberUser', username);
+                }
+
+                // Show success and redirect
+                const loginBtn = document.querySelector('.login-btn');
+                loginBtn.disabled = true;
+                loginBtn.textContent = '⏳ Mengalihkan...';
+
+                setTimeout(() => {
+                    window.location.href = 'admin.html';
+                }, 800);
+            } else {
+                // Login failed - show detailed error
+                if (!ADMIN_USERS[username]) {
+                    document.getElementById('usernameError').textContent = 'Username tidak ditemukan';
+                    document.getElementById('usernameError').classList.add('show');
+                } else {
+                    document.getElementById('passwordError').textContent = 'Password salah';
+                    document.getElementById('passwordError').classList.add('show');
+                }
+            }
+        });
+
+        function loginAsGuest() {
+            localStorage.setItem('adminLoggedIn', 'true');
+            localStorage.setItem('adminUser', 'Guest');
+            localStorage.setItem('adminLoginTime', Date.now().toString());
+            
+            const guestBtn = event.target;
+            guestBtn.disabled = true;
+            guestBtn.textContent = '⏳ Mengalihkan...';
+            
+            setTimeout(() => {
+                window.location.href = 'admin.html';
+            }, 800);
+        }
+
+        // Check if already logged in
+        if (localStorage.getItem('adminLoggedIn')) {
+            window.location.href = 'admin.html';
+        }
+
+        // Auto-fill if remembered
+        if (localStorage.getItem('adminRemember') && localStorage.getItem('adminRememberUser')) {
+            document.getElementById('username').value = localStorage.getItem('adminRememberUser');
+            document.getElementById('rememberMe').checked = true;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Fasilitas SD Negeri Kota 01 - Sarana dan Prasarana Modern untuk Pembelajaran Optimal">
+    <link href="./input.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <title>Fasilitas - SD Negeri Kota 01</title>
+</head>
+
+<body class="font-body antialiased">
+    <!-- Header -->
+    <header class="w-full fixed top-0 z-50 shadow-lg transition-transform duration-300">
+        <!-- Top Bar -->
+        <div class="bg-eduBlue-main text-white py-2 hidden md:block">
+            <div class="container mx-auto px-6 flex justify-between items-center text-xs font-medium">
+                <div class="flex items-center space-x-6">
+                    <a href="https://wa.me/628123456789"
+                        class="flex items-center hover:text-sunJoy transition-colors duration-300">
+                        <span class="mr-2">📞</span> Chat Admin: 0812-3456-7890
+                    </a>
+                    <div class="flex items-center">
+                        <span class="w-2 h-2 bg-careGreen rounded-full mr-2 animate-pulse"></span>
+                        Sekolah Buka (Tutup 14:00)
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <nav class="flex space-x-4 border-r border-white/20 pr-4">
+                        <a href="#" class="hover:underline transition-all">Portal Guru</a>
+                        <a href="#" class="hover:underline transition-all">Portal Orang Tua</a>
+                    </nav>
+                    <div class="flex items-center space-x-3 text-lg">
+                        <a href="#" class="hover:scale-110 transition-transform duration-300">📸</a>
+                        <a href="#" class="hover:scale-110 transition-transform duration-300">📺</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="bg-white border-b border-gray-100">
+            <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+                <a href="index.html" class="flex items-center group">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-eduBlue-main to-eduBlue-light rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                        <span class="text-white font-bold text-xl">SD</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="font-display font-bold text-eduBlue-main text-xl leading-none">SD NEGERI KOTA 01</h1>
+                        <span class="text-[10px] text-gray-500 font-medium tracking-widest uppercase mt-1">Unggul &
+                            Berkarakter</span>
+                    </div>
+                </a>
+
+                <ul class="hidden lg:flex items-center space-x-8">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="about.html" class="nav-link">Tentang</a></li>
+                    <li><a href="teachers.html" class="nav-link">Guru</a></li>
+                    <li><a href="facilities.html" class="nav-link">Fasilitas</a></li>
+                    <li><a href="news.html" class="nav-link">Berita</a></li>
+                    <li><a href="gallery.html" class="nav-link">Galeri</a></li>
+                    <li><a href="index.html#agenda" class="nav-link">Agenda</a></li>
+                    <li><a href="index.html#kontak" class="nav-link">Kontak</a></li>
+                    <li class="pl-4 border-l border-gray-200">
+                        <button id="searchButton"
+                            class="text-gray-400 hover:text-eduBlue-main transition-transform active:scale-90">🔍</button>
+                    </li>
+                </ul>
+
+                <div class="flex items-center space-x-4">
+                    <a href="index.html#ppdb"
+                        class="hidden sm:flex items-center bg-gradient-to-r from-sunJoy to-yellow-400 hover:from-yellow-400 hover:to-sunJoy text-softBlack font-bold py-3 px-6 rounded-xl shadow-lg shadow-sunJoy/30 transition-all hover:-translate-y-1 active:scale-95">
+                        Daftar PPDB
+                        <span class="ml-2">→</span>
+                    </a>
+                    <button id="mobileMenuButton"
+                        class="lg:hidden text-eduBlue-main text-3xl hover:scale-110 transition-transform">☰</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="lg:hidden fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300">
+            <div id="mobileMenuPanel"
+                class="fixed right-0 top-0 h-full w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3 class="font-display font-bold text-eduBlue-main text-xl">Menu</h3>
+                        <button id="closeMobileMenu" class="text-gray-500 hover:text-eduBlue-main text-3xl">×</button>
+                    </div>
+                    <nav class="space-y-4">
+                        <a href="index.html" class="mobile-nav-link">Beranda</a>
+                        <a href="about.html" class="mobile-nav-link">Tentang</a>
+                        <a href="teachers.html" class="mobile-nav-link">Guru</a>
+                        <a href="facilities.html" class="mobile-nav-link">Fasilitas</a>
+                        <a href="news.html" class="mobile-nav-link">Berita</a>
+                        <a href="gallery.html" class="mobile-nav-link">Galeri</a>
+                        <a href="index.html#agenda" class="mobile-nav-link">Agenda</a>
+                        <a href="index.html#kontak" class="mobile-nav-link">Kontak</a>
+                        <div class="pt-4 border-t border-gray-200">
+                            <a href="index.html#ppdb"
+                                class="block bg-gradient-to-r from-sunJoy to-yellow-400 text-softBlack font-bold py-3 px-6 rounded-xl text-center shadow-lg">
+                                Daftar PPDB →
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Modal -->
+    <div id="searchModal"
+        class="fixed inset-0 bg-gray-900/80 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-start justify-center pt-20">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl mx-4 transform scale-95 transition-transform duration-300"
+            id="searchPanel">
+            <div class="p-6">
+                <div class="flex items-center mb-4">
+                    <span class="text-2xl mr-3">🔍</span>
+                    <input type="text" id="searchInput" placeholder="Cari informasi sekolah..."
+                        class="flex-1 text-lg outline-none" autofocus>
+                    <button id="closeSearch" class="text-gray-400 hover:text-eduBlue-main text-3xl ml-4">×</button>
+                </div>
+                <div class="border-t border-gray-200 pt-4">
+                    <p class="text-sm text-gray-500 mb-4">Saran pencarian:</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1 bg-gray-100 rounded-full text-sm cursor-pointer hover:bg-eduBlue-light/20">PPDB</span>
+                        <span
+                            class="px-3 py-1 bg-gray-100 rounded-full text-sm cursor-pointer hover:bg-eduBlue-light/20">Fasilitas</span>
+                        <span
+                            class="px-3 py-1 bg-gray-100 rounded-full text-sm cursor-pointer hover:bg-eduBlue-light/20">Guru</span>
+                        <span
+                            class="px-3 py-1 bg-gray-100 rounded-full text-sm cursor-pointer hover:bg-eduBlue-light/20">Ekstrakurikuler</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="pt-32 pb-8 bg-gradient-to-r from-eduBlue-main to-eduBlue-light">
+        <div class="container mx-auto px-6">
+            <nav class="flex items-center space-x-2 text-white text-sm">
+                <a href="index.html" class="hover:underline">Home</a>
+                <span>/</span>
+                <span>Fasilitas</span>
+            </nav>
+            <h1 class="font-display text-4xl font-bold text-white mt-4">Fasilitas Unggulan</h1>
+            <p class="text-white/90 mt-2">Sarana dan prasarana modern untuk pembelajaran optimal</p>
+        </div>
+    </div>
+
+    <!-- Facilities Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-display text-4xl font-bold text-gray-900 mt-4 mb-6">Lengkap & Modern</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Kami menyediakan fasilitas modern dan lengkap untuk mendukung proses pembelajaran yang optimal dan
+                    mendorong pengembangan potensi siswa.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Perpustakaan -->
+                <div class="facility-card group">
+                    <div class="facility-image-wrapper">
+                        <img src="./assets/school_library_facility_1769477904499.png" alt="Perpustakaan"
+                            class="facility-image">
+                        <div class="facility-overlay">
+                            <span class="text-white font-semibold">Lihat Detail</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">Perpustakaan Modern</h3>
+                        <p class="text-gray-600 text-sm mb-3">
+                            Koleksi buku lengkap dengan ruang baca nyaman dan sistem digital yang memudahkan akses
+                            informasi.
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>✓ 5000+ koleksi buku</li>
+                            <li>✓ Ruang baca AC</li>
+                            <li>✓ Sistem digital RFID</li>
+                            <li>✓ Area komputer pencarian</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Lab Komputer -->
+                <div class="facility-card group">
+                    <div class="facility-image-wrapper">
+                        <img src="./assets/school_computer_lab_1769477926999.png" alt="Lab Komputer"
+                            class="facility-image">
+                        <div class="facility-overlay">
+                            <span class="text-white font-semibold">Lihat Detail</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">Lab Komputer</h3>
+                        <p class="text-gray-600 text-sm mb-3">
+                            Laboratorium komputer dengan perangkat terkini untuk pembelajaran teknologi dan coding.
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>✓ 40 unit komputer</li>
+                            <li>✓ Internet berkecepatan tinggi</li>
+                            <li>✓ Software pembelajaran terbaru</li>
+                            <li>✓ AC dan pencahayaan optimal</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Lapangan Olahraga -->
+                <div class="facility-card group">
+                    <div class="facility-image-wrapper">
+                        <img src="./assets/school_sports_field_1769477953448.png" alt="Lapangan Olahraga"
+                            class="facility-image">
+                        <div class="facility-overlay">
+                            <span class="text-white font-semibold">Lihat Detail</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">Lapangan Olahraga</h3>
+                        <p class="text-gray-600 text-sm mb-3">
+                            Lapangan serbaguna untuk berbagai aktivitas olahraga dengan standar yang aman dan nyaman.
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>✓ 2 lapangan olahraga</li>
+                            <li>✓ Tenis meja</li>
+                            <li>✓ Gym dan peralatan fitness</li>
+                            <li>✓ Area senam</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Ruang Kelas -->
+                <div class="facility-card group">
+                    <div class="facility-image-wrapper">
+                        <div
+                            class="w-full h-64 bg-gradient-to-br from-eduBlue-light/20 to-sunJoy/20 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-6xl mb-4">🏫</div>
+                                <p class="text-gray-600 font-semibold">Ruang Kelas Ber-AC</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">Ruang Kelas Nyaman</h3>
+                        <p class="text-gray-600 text-sm mb-3">
+                            24 ruang kelas dilengkapi AC, proyektor, dan desain ergonomis untuk kenyamanan belajar.
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>✓ 24 kelas berstandar</li>
+                            <li>✓ AC dan ventilasi baik</li>
+                            <li>✓ Proyektor & papan interaktif</li>
+                            <li>✓ Meja kursi ergonomis</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Lab IPA -->
+                <div class="facility-card group">
+                    <div class="facility-image-wrapper">
+                        <div
+                            class="w-full h-64 bg-gradient-to-br from-careGreen/20 to-eduBlue-light/20 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-6xl mb-4">🔬</div>
+                                <p class="text-gray-600 font-semibold">Laboratorium IPA</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">Laboratorium IPA</h3>
+                        <p class="text-gray-600 text-sm mb-3">
+                            Fasilitas praktikum sains lengkap untuk pembelajaran eksperimental yang menyenangkan.
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>✓ Peralatan praktikum lengkap</li>
+                            <li>✓ Sistem keamanan</li>
+                            <li>✓ Microscope digital</li>
+                            <li>✓ Media pembelajaran interaktif</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Ruang Seni -->
+                <div class="facility-card group">
+                    <div class="facility-image-wrapper">
+                        <div
+                            class="w-full h-64 bg-gradient-to-br from-sunJoy/20 to-pink-200/20 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-6xl mb-4">🎨</div>
+                                <p class="text-gray-600 font-semibold">Ruang Seni & Musik</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">Ruang Seni & Musik</h3>
+                        <p class="text-gray-600 text-sm mb-3">
+                            Ruang khusus untuk mengembangkan bakat seni, musik, dan kreativitas siswa.
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>✓ Studio musik lengkap</li>
+                            <li>✓ Alat musik berkualitas</li>
+                            <li>✓ Ruang tari</li>
+                            <li>✓ Peralatan seni rupa</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Facilities -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Fasilitas Penunjang Lainnya</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card text-center hover:shadow-lg transition-all">
+                    <div class="text-5xl mb-4">🏥</div>
+                    <h3 class="font-bold text-gray-900 mb-2">UKS</h3>
+                    <p class="text-sm text-gray-600">Ruang kesehatan dengan petugas profesional</p>
+                </div>
+                <div class="card text-center hover:shadow-lg transition-all">
+                    <div class="text-5xl mb-4">🍽️</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Kantin Sehat</h3>
+                    <p class="text-sm text-gray-600">Menu sehat dan bergizi untuk siswa</p>
+                </div>
+                <div class="card text-center hover:shadow-lg transition-all">
+                    <div class="text-5xl mb-4">🚌</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Bus Sekolah</h3>
+                    <p class="text-sm text-gray-600">Transportasi aman untuk siswa</p>
+                </div>
+                <div class="card text-center hover:shadow-lg transition-all">
+                    <div class="text-5xl mb-4">🌳</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Taman</h3>
+                    <p class="text-sm text-gray-600">Area hijau untuk pembelajaran lingkungan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-eduBlue-main to-eduBlue-light text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-sunJoy rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h2 class="font-display text-4xl font-bold mb-6">Kunjungi Sekolah Kami</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+                Ingin melihat langsung semua fasilitas kami? Hubungi kami untuk menjadwalkan kunjungan sekolah.
+            </p>
+            <a href="index.html#kontak"
+                class="inline-block bg-sunJoy hover:bg-yellow-400 text-softBlack font-bold py-4 px-8 rounded-xl shadow-lg transition-all hover:-translate-y-1 active:scale-95">
+                Hubungi Kami
+                <span class="ml-2">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- School Info -->
+                <div class="col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-eduBlue-main to-eduBlue-light rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-xl">SD</span>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-white text-xl">SD NEGERI KOTA 01</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Unggul & Berkarakter</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4 max-w-md">
+                        Memberikan pendidikan berkualitas dengan fasilitas modern dan tenaga pendidik profesional sejak
+                        1998.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-display font-bold text-white mb-4">Link Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-sunJoy transition-colors">Tentang Kami</a></li>
+                        <li><a href="teachers.html" class="hover:text-sunJoy transition-colors">Guru & Staff</a></li>
+                        <li><a href="facilities.html" class="hover:text-sunJoy transition-colors">Fasilitas</a></li>
+                        <li><a href="news.html" class="hover:text-sunJoy transition-colors">Berita</a></li>
+                        <li><a href="gallery.html" class="hover:text-sunJoy transition-colors">Galeri</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-display font-bold text-white mb-4">Kontak</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <span class="mr-2">📍</span>
+                            <span>Jl. Pendidikan No. 123, Jakarta Pusat 10110</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="mr-2">📞</span>
+                            <span>(021) 1234-5678</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="mr-2">📱</span>
+                            <span>0812-3456-7890</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p class="text-gray-400">
+                    © 2026 SD Negeri Kota 01. All rights reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="privacy-policy.html" class="hover:text-sunJoy transition-colors">Privacy Policy</a>
+                    <a href="terms-and-conditions.html" class="hover:text-sunJoy transition-colors">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop"
+        class="fixed bottom-8 right-8 w-12 h-12 bg-eduBlue-main hover:bg-eduBlue-dark text-white rounded-full shadow-lg flex items-center justify-center transition-all opacity-0 pointer-events-none z-40">
+        ↑
+    </button>
+
+    <script>
+        // ===== Mobile Menu =====
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+            mobileMenuPanel.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenuFunc() {
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+            mobileMenuPanel.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) closeMobileMenuFunc();
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                setTimeout(closeMobileMenuFunc, 300);
+            });
+        });
+
+        // ===== Search Modal =====
+        const searchButton = document.getElementById('searchButton');
+        const searchModal = document.getElementById('searchModal');
+        const searchPanel = document.getElementById('searchPanel');
+        const closeSearch = document.getElementById('closeSearch');
+        const searchInput = document.getElementById('searchInput');
+
+        function openSearch() {
+            searchModal.classList.remove('opacity-0', 'pointer-events-none');
+            searchPanel.classList.remove('scale-95');
+            searchPanel.classList.add('scale-100');
+            setTimeout(() => searchInput.focus(), 100);
+        }
+
+        function closeSearchFunc() {
+            searchModal.classList.add('opacity-0', 'pointer-events-none');
+            searchPanel.classList.add('scale-95');
+            searchPanel.classList.remove('scale-100');
+            searchInput.value = '';
+        }
+
+        searchButton.addEventListener('click', openSearch);
+        closeSearch.addEventListener('click', closeSearchFunc);
+        searchModal.addEventListener('click', (e) => {
+            if (e.target === searchModal) closeSearchFunc();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                openSearch();
+            }
+            if (e.key === 'Escape') {
+                closeSearchFunc();
+                closeMobileMenuFunc();
+            }
+        });
+
+        // ===== Back to Top Button =====
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== Header Hide on Scroll =====
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+
+            if (currentScroll <= 50) {
+                header.style.transform = 'translateY(0)';
+            } else if (currentScroll > lastScroll && currentScroll > 200) {
+                header.style.transform = 'translateY(-100%)';
+            } else if (currentScroll < lastScroll) {
+                header.style.transform = 'translateY(0)';
+            }
+
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+
+</html>

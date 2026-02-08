@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Penerimaan Peserta Didik Baru (PPDB) SD Negeri Kota 01 - Daftar Online Sekarang">
+    <link href="./input.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <title>PPDB 2026/2027 - SD Negeri Kota 01</title>
+</head>
+
+<body class="font-body antialiased">
+    <!-- Header -->
+    <header class="w-full fixed top-0 z-50 shadow-lg transition-transform duration-300">
+        <!-- Top Bar -->
+        <div class="bg-eduBlue-main text-white py-2 hidden md:block">
+            <div class="container mx-auto px-6 flex justify-between items-center text-xs font-medium">
+                <div class="flex items-center space-x-6">
+                    <a href="https://wa.me/628123456789"
+                        class="flex items-center hover:text-sunJoy transition-colors duration-300">
+                        <span class="mr-2">📞</span> Chat Admin: 0812-3456-7890
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="bg-white border-b border-gray-100">
+            <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+                <a href="index.html" class="flex items-center group">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-eduBlue-main to-eduBlue-light rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                        <span class="text-white font-bold text-xl">SD</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="font-display font-bold text-eduBlue-main text-xl leading-none">SD NEGERI KOTA 01</h1>
+                        <span class="text-[10px] text-gray-500 font-medium tracking-widest uppercase mt-1">Unggul &
+                            Berkarakter</span>
+                    </div>
+                </a>
+
+                <ul class="hidden lg:flex items-center space-x-8">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="about.html" class="nav-link">Tentang</a></li>
+                    <li><a href="teachers.html" class="nav-link">Guru</a></li>
+                    <li><a href="facilities.html" class="nav-link">Fasilitas</a></li>
+                    <li><a href="news.html" class="nav-link">Berita</a></li>
+                    <li><a href="gallery.html" class="nav-link">Galeri</a></li>
+                    <li><a href="index.html#agenda" class="nav-link">Agenda</a></li>
+                    <li><a href="index.html#kontak" class="nav-link">Kontak</a></li>
+                </ul>
+
+                <div class="flex items-center space-x-4">
+                    <a href="ppdb.html"
+                        class="hidden sm:flex items-center bg-gradient-to-r from-sunJoy to-yellow-400 hover:from-yellow-400 hover:to-sunJoy text-softBlack font-bold py-3 px-6 rounded-xl shadow-lg shadow-sunJoy/30 transition-all hover:-translate-y-1 active:scale-95">
+                        Daftar PPDB
+                        <span class="ml-2">→</span>
+                    </a>
+                    <button id="mobileMenuButton"
+                        class="lg:hidden text-eduBlue-main text-3xl hover:scale-110 transition-transform">☰</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="lg:hidden fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300">
+            <div id="mobileMenuPanel"
+                class="fixed right-0 top-0 h-full w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3 class="font-display font-bold text-eduBlue-main text-xl">Menu</h3>
+                        <button id="closeMobileMenu" class="text-gray-500 hover:text-eduBlue-main text-3xl">×</button>
+                    </div>
+                    <nav class="space-y-4">
+                        <a href="index.html" class="mobile-nav-link">Beranda</a>
+                        <a href="about.html" class="mobile-nav-link">Tentang</a>
+                        <a href="teachers.html" class="mobile-nav-link">Guru</a>
+                        <a href="facilities.html" class="mobile-nav-link">Fasilitas</a>
+                        <a href="news.html" class="mobile-nav-link">Berita</a>
+                        <a href="gallery.html" class="mobile-nav-link">Galeri</a>
+                        <a href="index.html#agenda" class="mobile-nav-link">Agenda</a>
+                        <a href="index.html#kontak" class="mobile-nav-link">Kontak</a>
+                        <div class="pt-4 border-t border-gray-200">
+                            <a href="ppdb.html"
+                                class="block bg-gradient-to-r from-sunJoy to-yellow-400 text-softBlack font-bold py-3 px-6 rounded-xl text-center shadow-lg">
+                                Daftar PPDB →
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="pt-32 pb-8 bg-gradient-to-r from-eduBlue-main to-eduBlue-light">
+        <div class="container mx-auto px-6">
+            <nav class="flex items-center space-x-2 text-white text-sm">
+                <a href="index.html" class="hover:underline">Home</a>
+                <span>/</span>
+                <span>PPDB 2026/2027</span>
+            </nav>
+            <h1 class="font-display text-4xl font-bold text-white mt-4">Pendaftaran Peserta Didik Baru</h1>
+            <p class="text-white/90 mt-2">Tahun Ajaran 2026/2027</p>
+        </div>
+    </div>
+
+    <!-- Timeline Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Jadwal PPDB 2026/2027</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Berikut adalah jadwal lengkap pelaksanaan PPDB tahun ajaran 2026/2027. Pastikan Anda mengikuti setiap
+                    tahapan dengan baik.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Timeline Item 1 -->
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 text-center">
+                        <div class="text-4xl mb-3">📝</div>
+                        <h3 class="font-bold text-gray-900 mb-2">Pendaftaran</h3>
+                        <p class="text-sm text-gray-600 mb-3">Periode Pendaftaran</p>
+                        <div class="font-display font-bold text-eduBlue-main text-lg">
+                            1 - 31 Januari 2026
+                        </div>
+                        <div class="text-xs text-gray-500 mt-2">Early bird discount: 20%</div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 text-center">
+                        <div class="text-4xl mb-3">✓</div>
+                        <h3 class="font-bold text-gray-900 mb-2">Seleksi</h3>
+                        <p class="text-sm text-gray-600 mb-3">Proses Seleksi</p>
+                        <div class="font-display font-bold text-careGreen text-lg">
+                            1 - 4 Februari 2026
+                        </div>
+                        <div class="text-xs text-gray-500 mt-2">Pemeriksaan berkas & tes</div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl p-6 text-center">
+                        <div class="text-4xl mb-3">📢</div>
+                        <h3 class="font-bold text-gray-900 mb-2">Pengumuman</h3>
+                        <p class="text-sm text-gray-600 mb-3">Hasil Seleksi</p>
+                        <div class="font-display font-bold text-sunJoy text-lg">
+                            5 Februari 2026
+                        </div>
+                        <div class="text-xs text-gray-500 mt-2">Tersedia online</div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 text-center">
+                        <div class="text-4xl mb-3">📋</div>
+                        <h3 class="font-bold text-gray-900 mb-2">Daftar Ulang</h3>
+                        <p class="text-sm text-gray-600 mb-3">Konfirmasi Penerimaan</p>
+                        <div class="font-display font-bold text-purple-600 text-lg">
+                            10 - 20 Februari 2026
+                        </div>
+                        <div class="text-xs text-gray-500 mt-2">Pembayaran dan dokumen</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Requirements -->
+                <div>
+                    <h2 class="font-display text-3xl font-bold text-gray-900 mb-8">Persyaratan Pendaftaran</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="card border-l-4 border-eduBlue-main">
+                            <h3 class="font-bold text-gray-900 mb-2">✓ Usia Masuk</h3>
+                            <p class="text-gray-600 text-sm">
+                                Calon siswa harus berusia minimal 6 tahun pada tanggal 1 Juli 2026, atau sudah berusia 6 tahun sebelum tanggal tersebut.
+                            </p>
+                        </div>
+
+                        <div class="card border-l-4 border-careGreen">
+                            <h3 class="font-bold text-gray-900 mb-2">✓ Akte Kelahiran</h3>
+                            <p class="text-gray-600 text-sm">
+                                Fotokopi akte kelahiran yang dilegalisasi oleh pejabat yang berwenang atau kelurahan.
+                            </p>
+                        </div>
+
+                        <div class="card border-l-4 border-sunJoy">
+                            <h3 class="font-bold text-gray-900 mb-2">✓ Kartu Keluarga</h3>
+                            <p class="text-gray-600 text-sm">
+                                Fotokopi Kartu Keluarga (KK) yang masih berlaku dan sesuai dengan akte kelahiran.
+                            </p>
+                        </div>
+
+                        <div class="card border-l-4 border-purple-500">
+                            <h3 class="font-bold text-gray-900 mb-2">✓ Pas Foto</h3>
+                            <p class="text-gray-600 text-sm">
+                                Pas foto calon siswa ukuran 3x4 cm sebanyak 2 lembar dengan latar belakang biru.
+                            </p>
+                        </div>
+
+                        <div class="card border-l-4 border-pink-500">
+                            <h3 class="font-bold text-gray-900 mb-2">✓ Surat Kesehatan</h3>
+                            <p class="text-gray-600 text-sm">
+                                Surat keterangan kesehatan dari puskesmas atau dokter yang menyatakan calon siswa sehat jasmani dan rohani.
+                            </p>
+                        </div>
+
+                        <div class="card border-l-4 border-orange-500">
+                            <h3 class="font-bold text-gray-900 mb-2">✓ Identitas Orang Tua</h3>
+                            <p class="text-gray-600 text-sm">
+                                Fotokopi KTP/Identitas Orang Tua yang masih berlaku dan legible.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Form -->
+                <div>
+                    <h2 class="font-display text-3xl font-bold text-gray-900 mb-8">Formulir Pendaftaran Online</h2>
+                    
+                    <form class="space-y-4" id="ppdbForm">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Nama Calon Siswa *</label>
+                            <input type="text" id="studentName" placeholder="Nama lengkap sesuai akte kelahiran" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-eduBlue-main">
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Tempat Lahir *</label>
+                                <input type="text" id="birthPlace" placeholder="Kota/Kabupaten" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-eduBlue-main">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Tanggal Lahir *</label>
+                                <input type="date" id="birthDate" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-eduBlue-main">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Jenis Kelamin *</label>
+                                <select id="gender" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-eduBlue-main">
+                                    <option>Pilih Jenis Kelamin</option>
+                                    <option>Laki-laki</option>
+                                    <option>Perempuan</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Agama *</label>
+                                <select id="religion" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-eduBlue-main">
+                                    <option>Pilih Agama</option>
+                                    <option>Islam</option>
+                                    <option>Kristen</option>
+                                    <option>Katolik</option>
+                                    <option>Hindu</option>
+                                    <option>Buddha</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Nama Orang Tua/Wali *</label>
+                            <input type="text" id="parentName" placeholder="Nama lengkap" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-eduBlue-main">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Nomor Telepon *</label>
+                            <input type="tel" id="phone" placeholder="08xx-xxxx-xxxx" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-eduBlue-main">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Email *</label>
+                            <input type="email" id="email" placeholder="email@contoh.com" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-eduBlue-main">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Alamat Lengkap *</label>
+                            <textarea rows="3" id="address" placeholder="Jalan, No., Kelurahan, Kecamatan, Kota" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-eduBlue-main"></textarea>
+                        </div>
+
+                        <div class="flex items-center">
+                            <input type="checkbox" id="agree" class="w-4 h-4 text-eduBlue-main rounded" required>
+                            <label for="agree" class="ml-2 text-sm text-gray-600">
+                                Saya setuju dengan <a href="terms-and-conditions.html" class="text-eduBlue-main hover:underline">Syarat & Ketentuan</a> dan <a href="privacy-policy.html" class="text-eduBlue-main hover:underline">Kebijakan Privasi</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full btn-primary justify-center">
+                            Daftar Sekarang
+                            <span class="ml-2">→</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Pertanyaan Umum</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Berikut adalah jawaban atas pertanyaan-pertanyaan yang sering diajukan calon siswa dan orang tua.
+                </p>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="card">
+                    <details class="group cursor-pointer">
+                        <summary class="flex items-center justify-between font-semibold text-gray-900">
+                            <span>Berapa biaya pendaftaran PPDB?</span>
+                            <span class="transform group-open:rotate-180 transition-transform">▼</span>
+                        </summary>
+                        <p class="text-gray-600 mt-4">
+                            Biaya pendaftaran PPDB Tahun Ajaran 2026/2027 adalah Rp 100.000. Diskon 20% berlaku untuk pendaftar pada periode early bird (1-31 Januari 2026), sehingga cukup membayar Rp 80.000.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="card">
+                    <details class="group cursor-pointer">
+                        <summary class="flex items-center justify-between font-semibold text-gray-900">
+                            <span>Apakah sudah ada sistem zonasi untuk penerimaan siswa?</span>
+                            <span class="transform group-open:rotate-180 transition-transform">▼</span>
+                        </summary>
+                        <p class="text-gray-600 mt-4">
+                            Ya, kami mengikuti kebijakan zonasi dari Kementerian Pendidikan. Prioritas pertama adalah calon siswa dari zona terdekat sesuai dengan ketetapan pemerintah, kemudian dilanjutkan dengan calon siswa dari luar zona sesuai dengan kuota yang tersedia.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="card">
+                    <details class="group cursor-pointer">
+                        <summary class="flex items-center justify-between font-semibold text-gray-900">
+                            <span>Bagaimana cara mengetahui hasil seleksi PPDB?</span>
+                            <span class="transform group-open:rotate-180 transition-transform">▼</span>
+                        </summary>
+                        <p class="text-gray-600 mt-4">
+                            Hasil seleksi PPDB akan diumumkan pada tanggal 5 Februari 2026. Anda dapat mengecek hasilnya melalui website resmi sekolah (sdnegerikota01.sch.id) atau menghubungi panitia PPDB melalui WhatsApp di nomor 0812-3456-7890.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="card">
+                    <details class="group cursor-pointer">
+                        <summary class="flex items-center justify-between font-semibold text-gray-900">
+                            <span>Berapa kuota penerimaan siswa baru tahun ini?</span>
+                            <span class="transform group-open:rotate-180 transition-transform">▼</span>
+                        </summary>
+                        <p class="text-gray-600 mt-4">
+                            Kuota penerimaan siswa baru tahun ajaran 2026/2027 adalah 120 siswa yang akan dibagi menjadi 4 kelas paralel. Masing-masing kelas direncanakan memiliki 30 siswa untuk memastikan kualitas pembelajaran yang optimal.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="card">
+                    <details class="group cursor-pointer">
+                        <summary class="flex items-center justify-between font-semibold text-gray-900">
+                            <span>Apa saja kriteria penerimaan siswa baru?</span>
+                            <span class="transform group-open:rotate-180 transition-transform">▼</span>
+                        </summary>
+                        <p class="text-gray-600 mt-4">
+                            Kriteria penerimaan mencakup: (1) Usia sesuai ketentuan (minimal 6 tahun pada 1 Juli 2026), (2) Kelengkapan dokumen, (3) Hasil seleksi administratif, (4) Zona tempat tinggal, dan (5) Urutan pendaftaran. Tidak ada tes tertulis, hanya pemeriksaan kelengkapan dokumen.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="card">
+                    <details class="group cursor-pointer">
+                        <summary class="flex items-center justify-between font-semibold text-gray-900">
+                            <span>Kapan tahun ajaran baru dimulai?</span>
+                            <span class="transform group-open:rotate-180 transition-transform">▼</span>
+                        </summary>
+                        <p class="text-gray-600 mt-4">
+                            Tahun ajaran baru 2026/2027 akan dimulai pada tanggal 13 Juli 2026. Sebelumnya akan ada kegiatan pengenalan lingkungan sekolah (MPLS) selama 3 hari untuk membantu siswa baru beradaptasi dengan lingkungan sekolah.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-gradient-to-r from-eduBlue-main to-eduBlue-light text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h2 class="font-display text-4xl font-bold mb-6">Ada Pertanyaan?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+                Hubungi panitia PPDB kami untuk informasi lebih lanjut dan panduan lengkap pendaftaran.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://wa.me/628123456789"
+                    class="bg-sunJoy hover:bg-yellow-400 text-softBlack font-bold py-4 px-8 rounded-xl shadow-lg transition-all hover:-translate-y-1 active:scale-95">
+                    Chat WhatsApp
+                    <span class="ml-2">→</span>
+                </a>
+                <a href="index.html#kontak"
+                    class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-xl transition-all hover:-translate-y-1 active:scale-95 border-2 border-white/50">
+                    Hubungi Kami
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-eduBlue-main to-eduBlue-light rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-xl">SD</span>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-white text-xl">SD NEGERI KOTA 01</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Unggul & Berkarakter</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-bold text-white mb-4">Link Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-sunJoy transition-colors">Tentang</a></li>
+                        <li><a href="ppdb.html" class="hover:text-sunJoy transition-colors">PPDB</a></li>
+                        <li><a href="facilities.html" class="hover:text-sunJoy transition-colors">Fasilitas</a></li>
+                        <li><a href="gallery.html" class="hover:text-sunJoy transition-colors">Galeri</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-bold text-white mb-4">Kontak</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>📞 (021) 1234-5678</li>
+                        <li>📱 0812-3456-7890</li>
+                        <li>📧 ppdb@sdnegerikota01.sch.id</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p class="text-gray-400">© 2026 SD Negeri Kota 01. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="privacy-policy.html" class="hover:text-sunJoy transition-colors">Privacy Policy</a>
+                    <a href="terms-and-conditions.html" class="hover:text-sunJoy transition-colors">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop"
+        class="fixed bottom-8 right-8 w-12 h-12 bg-eduBlue-main hover:bg-eduBlue-dark text-white rounded-full shadow-lg flex items-center justify-center transition-all opacity-0 pointer-events-none z-40">
+        ↑
+    </button>
+
+    <script>
+        // Mobile Menu
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+            mobileMenuPanel.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+            mobileMenuPanel.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        });
+
+        // Back to Top
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Form Submit - Integrate with Admin Dashboard
+        document.getElementById('ppdbForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const ppdbData = {
+                id: Date.now(),
+                studentName: document.getElementById('studentName').value,
+                birthPlace: document.getElementById('birthPlace').value,
+                birthDate: document.getElementById('birthDate').value,
+                gender: document.getElementById('gender').value,
+                religion: document.getElementById('religion').value,
+                parentName: document.getElementById('parentName').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                address: document.getElementById('address').value,
+                date: new Date().toISOString(),
+                status: 'Diterima'
+            };
+            
+            // Save to localStorage
+            let ppdbList = JSON.parse(localStorage.getItem('adminPPDB')) || [];
+            ppdbList.push(ppdbData);
+            localStorage.setItem('adminPPDB', JSON.stringify(ppdbList));
+            
+            // Show success message
+            alert('✅ Terima kasih telah mendaftar!\n\nData Anda telah disimpan dan akan segera diproses oleh panitia PPDB. Cek email Anda untuk informasi lebih lanjut.');
+            
+            // Reset form
+            document.getElementById('ppdbForm').reset();
+        });
+    </script>
+</body>
+
+</html>

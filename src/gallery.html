@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Galeri SD Negeri Kota 01 - Dokumentasi Aktivitas Sekolah">
+    <link href="./input.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <title>Galeri - SD Negeri Kota 01</title>
+</head>
+
+<body class="font-body antialiased">
+    <!-- Header -->
+    <header class="w-full fixed top-0 z-50 shadow-lg transition-transform duration-300">
+        <!-- Top Bar -->
+        <div class="bg-eduBlue-main text-white py-2 hidden md:block">
+            <div class="container mx-auto px-6 flex justify-between items-center text-xs font-medium">
+                <div class="flex items-center space-x-6">
+                    <a href="https://wa.me/628123456789"
+                        class="flex items-center hover:text-sunJoy transition-colors duration-300">
+                        <span class="mr-2">📞</span> Chat Admin: 0812-3456-7890
+                    </a>
+                    <div class="flex items-center">
+                        <span class="w-2 h-2 bg-careGreen rounded-full mr-2 animate-pulse"></span>
+                        Sekolah Buka (Tutup 14:00)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="bg-white border-b border-gray-100">
+            <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+                <a href="index.html" class="flex items-center group">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-eduBlue-main to-eduBlue-light rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                        <span class="text-white font-bold text-xl">SD</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="font-display font-bold text-eduBlue-main text-xl leading-none">SD NEGERI KOTA 01</h1>
+                        <span class="text-[10px] text-gray-500 font-medium tracking-widest uppercase mt-1">Unggul &
+                            Berkarakter</span>
+                    </div>
+                </a>
+
+                <ul class="hidden lg:flex items-center space-x-8">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="about.html" class="nav-link">Tentang</a></li>
+                    <li><a href="teachers.html" class="nav-link">Guru</a></li>
+                    <li><a href="facilities.html" class="nav-link">Fasilitas</a></li>
+                    <li><a href="news.html" class="nav-link">Berita</a></li>
+                    <li><a href="gallery.html" class="nav-link">Galeri</a></li>
+                    <li><a href="index.html#agenda" class="nav-link">Agenda</a></li>
+                    <li><a href="index.html#kontak" class="nav-link">Kontak</a></li>
+                </ul>
+
+                <div class="flex items-center space-x-4">
+                    <a href="index.html#ppdb"
+                        class="hidden sm:flex items-center bg-gradient-to-r from-sunJoy to-yellow-400 hover:from-yellow-400 hover:to-sunJoy text-softBlack font-bold py-3 px-6 rounded-xl shadow-lg shadow-sunJoy/30 transition-all hover:-translate-y-1 active:scale-95">
+                        Daftar PPDB
+                        <span class="ml-2">→</span>
+                    </a>
+                    <button id="mobileMenuButton"
+                        class="lg:hidden text-eduBlue-main text-3xl hover:scale-110 transition-transform">☰</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="lg:hidden fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300">
+            <div id="mobileMenuPanel"
+                class="fixed right-0 top-0 h-full w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3 class="font-display font-bold text-eduBlue-main text-xl">Menu</h3>
+                        <button id="closeMobileMenu" class="text-gray-500 hover:text-eduBlue-main text-3xl">×</button>
+                    </div>
+                    <nav class="space-y-4">
+                        <a href="index.html" class="mobile-nav-link">Beranda</a>
+                        <a href="about.html" class="mobile-nav-link">Tentang</a>
+                        <a href="teachers.html" class="mobile-nav-link">Guru</a>
+                        <a href="facilities.html" class="mobile-nav-link">Fasilitas</a>
+                        <a href="news.html" class="mobile-nav-link">Berita</a>
+                        <a href="gallery.html" class="mobile-nav-link">Galeri</a>
+                        <a href="index.html#agenda" class="mobile-nav-link">Agenda</a>
+                        <a href="index.html#kontak" class="mobile-nav-link">Kontak</a>
+                        <div class="pt-4 border-t border-gray-200">
+                            <a href="index.html#ppdb"
+                                class="block bg-gradient-to-r from-sunJoy to-yellow-400 text-softBlack font-bold py-3 px-6 rounded-xl text-center shadow-lg">
+                                Daftar PPDB →
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="pt-32 pb-8 bg-gradient-to-r from-eduBlue-main to-eduBlue-light">
+        <div class="container mx-auto px-6">
+            <nav class="flex items-center space-x-2 text-white text-sm">
+                <a href="index.html" class="hover:underline">Home</a>
+                <span>/</span>
+                <span>Galeri Sekolah</span>
+            </nav>
+            <h1 class="font-display text-4xl font-bold text-white mt-4">Galeri Sekolah</h1>
+            <p class="text-white/90 mt-2">Koleksi dokumentasi aktivitas dan kegiatan sekolah</p>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <!-- Gallery Filter -->
+            <div class="flex flex-wrap justify-center gap-3 mb-16">
+                <button class="px-6 py-2 rounded-full bg-eduBlue-main text-white font-semibold hover:shadow-lg transition-all">
+                    Semua
+                </button>
+                <button class="px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-eduBlue-main hover:text-white transition-all">
+                    Akademik
+                </button>
+                <button class="px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-eduBlue-main hover:text-white transition-all">
+                    Ekstrakurikuler
+                </button>
+                <button class="px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-eduBlue-main hover:text-white transition-all">
+                    Acara
+                </button>
+                <button class="px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-eduBlue-main hover:text-white transition-all">
+                    Fasilitas
+                </button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item group cursor-pointer overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all" onclick="openGalleryModal(0)">
+                    <div class="relative overflow-hidden h-64 bg-gradient-to-br from-eduBlue-light/30 to-sunJoy/30 flex items-center justify-center">
+                        <div class="text-6xl">📚</div>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                            <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity text-lg font-semibold">Perpustakaan</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="font-semibold text-gray-900">Perpustakaan Sekolah</p>
+                        <p class="text-sm text-gray-600">Koleksi buku dan digital learning</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item group cursor-pointer overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all" onclick="openGalleryModal(1)">
+                    <div class="relative overflow-hidden h-64 bg-gradient-to-br from-careGreen/30 to-blue-200/30 flex items-center justify-center">
+                        <div class="text-6xl">⚽</div>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                            <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity text-lg font-semibold">Olahraga</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="font-semibold text-gray-900">Kegiatan Olahraga</p>
+                        <p class="text-sm text-gray-600">Kompetisi dan latihan olahraga</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item group cursor-pointer overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all" onclick="openGalleryModal(2)">
+                    <div class="relative overflow-hidden h-64 bg-gradient-to-br from-sunJoy/30 to-pink-200/30 flex items-center justify-center">
+                        <div class="text-6xl">🎨</div>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                            <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity text-lg font-semibold">Seni</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="font-semibold text-gray-900">Kelas Seni & Musik</p>
+                        <p class="text-sm text-gray-600">Kreativitas dan eksplorasi seni</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item group cursor-pointer overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all" onclick="openGalleryModal(3)">
+                    <div class="relative overflow-hidden h-64 bg-gradient-to-br from-blue-300/30 to-purple-300/30 flex items-center justify-center">
+                        <div class="text-6xl">💻</div>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                            <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity text-lg font-semibold">Komputer</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="font-semibold text-gray-900">Lab Komputer</p>
+                        <p class="text-sm text-gray-600">Pembelajaran teknologi dan coding</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item group cursor-pointer overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all" onclick="openGalleryModal(4)">
+                    <div class="relative overflow-hidden h-64 bg-gradient-to-br from-orange-300/30 to-red-300/30 flex items-center justify-center">
+                        <div class="text-6xl">🧪</div>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                            <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity text-lg font-semibold">Lab IPA</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="font-semibold text-gray-900">Lab IPA</p>
+                        <p class="text-sm text-gray-600">Pembelajaran sains praktikum</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item group cursor-pointer overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all" onclick="openGalleryModal(5)">
+                    <div class="relative overflow-hidden h-64 bg-gradient-to-br from-pink-300/30 to-red-300/30 flex items-center justify-center">
+                        <div class="text-6xl">🎭</div>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                            <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity text-lg font-semibold">Acara</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="font-semibold text-gray-900">Acara Sekolah</p>
+                        <p class="text-sm text-gray-600">Event dan kegiatan spesial</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7 -->
+                <div class="gallery-item group cursor-pointer overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all" onclick="openGalleryModal(6)">
+                    <div class="relative overflow-hidden h-64 bg-gradient-to-br from-green-300/30 to-teal-300/30 flex items-center justify-center">
+                        <div class="text-6xl">🌳</div>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                            <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity text-lg font-semibold">Lingkungan</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="font-semibold text-gray-900">Program Lingkungan</p>
+                        <p class="text-sm text-gray-600">Penghijauan dan kebersihan sekolah</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 -->
+                <div class="gallery-item group cursor-pointer overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all" onclick="openGalleryModal(7)">
+                    <div class="relative overflow-hidden h-64 bg-gradient-to-br from-yellow-300/30 to-orange-300/30 flex items-center justify-center">
+                        <div class="text-6xl">🍽️</div>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                            <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity text-lg font-semibold">Kantin</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="font-semibold text-gray-900">Kantin Sehat</p>
+                        <p class="text-sm text-gray-600">Menu sehat dan bergizi</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 9 -->
+                <div class="gallery-item group cursor-pointer overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all" onclick="openGalleryModal(8)">
+                    <div class="relative overflow-hidden h-64 bg-gradient-to-br from-indigo-300/30 to-purple-300/30 flex items-center justify-center">
+                        <div class="text-6xl">🎓</div>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                            <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity text-lg font-semibold">Wisuda</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="font-semibold text-gray-900">Upacara & Wisuda</p>
+                        <p class="text-sm text-gray-600">Momen spesial kelulusan siswa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="fixed inset-0 bg-black/90 z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4">
+        <div class="relative max-w-4xl w-full">
+            <button id="closeGallery" class="absolute -top-10 right-0 text-white hover:text-sunJoy text-4xl transition-colors">×</button>
+            
+            <div class="bg-white rounded-2xl overflow-hidden shadow-2xl">
+                <div class="relative bg-gradient-to-br from-gray-900 to-gray-800 h-96 flex items-center justify-center overflow-hidden">
+                    <div id="galleryContent" class="text-6xl">📸</div>
+                </div>
+                <div class="p-6">
+                    <h3 id="galleryTitle" class="font-display text-2xl font-bold text-gray-900 mb-3">Galeri Sekolah</h3>
+                    <p id="galleryDesc" class="text-gray-600 mb-4">Dokumentasi kegiatan sekolah kami</p>
+                    <div class="flex justify-between items-center">
+                        <button id="prevGallery" class="text-eduBlue-main hover:text-eduBlue-dark font-semibold flex items-center transition-colors">
+                            <span class="mr-2">←</span> Sebelumnya
+                        </button>
+                        <span id="galleryCounter" class="text-gray-600 font-semibold">1 / 9</span>
+                        <button id="nextGallery" class="text-eduBlue-main hover:text-eduBlue-dark font-semibold flex items-center transition-colors">
+                            Selanjutnya <span class="ml-2">→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-eduBlue-main to-eduBlue-light text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h2 class="font-display text-4xl font-bold mb-6">Tertarik Bergabung?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+                Jadilah bagian dari komunitas SD Negeri Kota 01 dan rasakan pengalaman belajar yang luar biasa.
+            </p>
+            <a href="index.html#ppdb"
+                class="inline-block bg-sunJoy hover:bg-yellow-400 text-softBlack font-bold py-4 px-8 rounded-xl shadow-lg transition-all hover:-translate-y-1 active:scale-95">
+                Daftar PPDB 2026/2027
+                <span class="ml-2">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-eduBlue-main to-eduBlue-light rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-xl">SD</span>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-white text-xl">SD NEGERI KOTA 01</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-bold text-white mb-4">Link Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-sunJoy transition-colors">Tentang</a></li>
+                        <li><a href="teachers.html" class="hover:text-sunJoy transition-colors">Guru</a></li>
+                        <li><a href="facilities.html" class="hover:text-sunJoy transition-colors">Fasilitas</a></li>
+                        <li><a href="news.html" class="hover:text-sunJoy transition-colors">Berita</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-bold text-white mb-4">Kontak</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>📞 (021) 1234-5678</li>
+                        <li>📱 0812-3456-7890</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p class="text-gray-400">© 2026 SD Negeri Kota 01. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="privacy-policy.html" class="hover:text-sunJoy transition-colors">Privacy Policy</a>
+                    <a href="terms-and-conditions.html" class="hover:text-sunJoy transition-colors">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop"
+        class="fixed bottom-8 right-8 w-12 h-12 bg-eduBlue-main hover:bg-eduBlue-dark text-white rounded-full shadow-lg flex items-center justify-center transition-all opacity-0 pointer-events-none z-40">
+        ↑
+    </button>
+
+    <script>
+        const galleryData = [
+            { title: "Perpustakaan Sekolah", description: "Perpustakaan modern dengan koleksi buku lengkap dan fasilitas digital", icon: "📚" },
+            { title: "Kegiatan Olahraga", description: "Berbagai kegiatan olahraga untuk mengembangkan kesehatan siswa", icon: "⚽" },
+            { title: "Kelas Seni & Musik", description: "Kelas seni yang mengembangkan kreativitas dan bakat siswa", icon: "🎨" },
+            { title: "Lab Komputer", description: "Laboratorium komputer dengan perangkat terkini untuk pembelajaran teknologi", icon: "💻" },
+            { title: "Lab IPA", description: "Laboratorium IPA lengkap dengan peralatan modern untuk pembelajaran sains", icon: "🧪" },
+            { title: "Acara Sekolah", description: "Dokumentasi berbagai acara dan kegiatan sekolah sepanjang tahun", icon: "🎭" },
+            { title: "Program Lingkungan", description: "Kegiatan penghijauan dan program keberlanjutan lingkungan sekolah", icon: "🌳" },
+            { title: "Kantin Sehat", description: "Kantin sekolah yang menyediakan menu sehat dan bergizi untuk siswa", icon: "🍽️" },
+            { title: "Upacara & Wisuda", description: "Momen spesial kelulusan dan berbagai upacara di sekolah kami", icon: "🎓" }
+        ];
+
+        let currentGalleryIndex = 0;
+
+        function openGalleryModal(index) {
+            currentGalleryIndex = index;
+            updateGalleryModal();
+            const modal = document.getElementById('galleryModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGalleryFunc() {
+            const modal = document.getElementById('galleryModal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = '';
+        }
+
+        function updateGalleryModal() {
+            const item = galleryData[currentGalleryIndex];
+            document.getElementById('galleryContent').textContent = item.icon;
+            document.getElementById('galleryTitle').textContent = item.title;
+            document.getElementById('galleryDesc').textContent = item.description;
+            document.getElementById('galleryCounter').textContent = `${currentGalleryIndex + 1} / ${galleryData.length}`;
+        }
+
+        function nextGallery() {
+            currentGalleryIndex = (currentGalleryIndex + 1) % galleryData.length;
+            updateGalleryModal();
+        }
+
+        function prevGallery() {
+            currentGalleryIndex = (currentGalleryIndex - 1 + galleryData.length) % galleryData.length;
+            updateGalleryModal();
+        }
+
+        // Gallery Event Listeners
+        document.getElementById('closeGallery').addEventListener('click', closeGalleryFunc);
+        document.getElementById('galleryModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('galleryModal')) closeGalleryFunc();
+        });
+        document.getElementById('nextGallery').addEventListener('click', nextGallery);
+        document.getElementById('prevGallery').addEventListener('click', prevGallery);
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('galleryModal');
+            if (!modal.classList.contains('opacity-0')) {
+                if (e.key === 'ArrowRight') nextGallery();
+                if (e.key === 'ArrowLeft') prevGallery();
+            }
+        });
+
+        // Mobile Menu
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+            mobileMenuPanel.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+            mobileMenuPanel.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                setTimeout(() => {
+                    mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                    mobileMenuPanel.classList.add('translate-x-full');
+                    document.body.style.overflow = '';
+                }, 300);
+            });
+        });
+
+        // Back to Top
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>

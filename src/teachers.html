@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Guru dan Staff SD Negeri Kota 01 - Tenaga Pendidik Profesional dan Berdedikasi">
+    <link href="./input.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <title>Guru & Staff - SD Negeri Kota 01</title>
+</head>
+
+<body class="font-body antialiased">
+    <!-- Header -->
+    <header class="w-full fixed top-0 z-50 shadow-lg transition-transform duration-300">
+        <!-- Top Bar -->
+        <div class="bg-eduBlue-main text-white py-2 hidden md:block">
+            <div class="container mx-auto px-6 flex justify-between items-center text-xs font-medium">
+                <div class="flex items-center space-x-6">
+                    <a href="https://wa.me/628123456789"
+                        class="flex items-center hover:text-sunJoy transition-colors duration-300">
+                        <span class="mr-2">📞</span> Chat Admin: 0812-3456-7890
+                    </a>
+                    <div class="flex items-center">
+                        <span class="w-2 h-2 bg-careGreen rounded-full mr-2 animate-pulse"></span>
+                        Sekolah Buka (Tutup 14:00)
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <nav class="flex space-x-4 border-r border-white/20 pr-4">
+                        <a href="#" class="hover:underline transition-all">Portal Guru</a>
+                        <a href="#" class="hover:underline transition-all">Portal Orang Tua</a>
+                    </nav>
+                    <div class="flex items-center space-x-3 text-lg">
+                        <a href="#" class="hover:scale-110 transition-transform duration-300">📸</a>
+                        <a href="#" class="hover:scale-110 transition-transform duration-300">📺</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="bg-white border-b border-gray-100">
+            <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+                <a href="index.html" class="flex items-center group">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-eduBlue-main to-eduBlue-light rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                        <span class="text-white font-bold text-xl">SD</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="font-display font-bold text-eduBlue-main text-xl leading-none">SD NEGERI KOTA 01</h1>
+                        <span class="text-[10px] text-gray-500 font-medium tracking-widest uppercase mt-1">Unggul &
+                            Berkarakter</span>
+                    </div>
+                </a>
+
+                <ul class="hidden lg:flex items-center space-x-8">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="about.html" class="nav-link">Tentang</a></li>
+                    <li><a href="teachers.html" class="nav-link">Guru</a></li>
+                    <li><a href="facilities.html" class="nav-link">Fasilitas</a></li>
+                    <li><a href="news.html" class="nav-link">Berita</a></li>
+                    <li><a href="gallery.html" class="nav-link">Galeri</a></li>
+                    <li><a href="index.html#agenda" class="nav-link">Agenda</a></li>
+                    <li><a href="index.html#kontak" class="nav-link">Kontak</a></li>
+                    <li class="pl-4 border-l border-gray-200">
+                        <button id="searchButton"
+                            class="text-gray-400 hover:text-eduBlue-main transition-transform active:scale-90">🔍</button>
+                    </li>
+                </ul>
+
+                <div class="flex items-center space-x-4">
+                    <a href="index.html#ppdb"
+                        class="hidden sm:flex items-center bg-gradient-to-r from-sunJoy to-yellow-400 hover:from-yellow-400 hover:to-sunJoy text-softBlack font-bold py-3 px-6 rounded-xl shadow-lg shadow-sunJoy/30 transition-all hover:-translate-y-1 active:scale-95">
+                        Daftar PPDB
+                        <span class="ml-2">→</span>
+                    </a>
+                    <button id="mobileMenuButton"
+                        class="lg:hidden text-eduBlue-main text-3xl hover:scale-110 transition-transform">☰</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="lg:hidden fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300">
+            <div id="mobileMenuPanel"
+                class="fixed right-0 top-0 h-full w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3 class="font-display font-bold text-eduBlue-main text-xl">Menu</h3>
+                        <button id="closeMobileMenu" class="text-gray-500 hover:text-eduBlue-main text-3xl">×</button>
+                    </div>
+                    <nav class="space-y-4">
+                        <a href="index.html" class="mobile-nav-link">Beranda</a>
+                        <a href="about.html" class="mobile-nav-link">Tentang</a>
+                        <a href="teachers.html" class="mobile-nav-link">Guru</a>
+                        <a href="facilities.html" class="mobile-nav-link">Fasilitas</a>
+                        <a href="news.html" class="mobile-nav-link">Berita</a>
+                        <a href="gallery.html" class="mobile-nav-link">Galeri</a>
+                        <a href="index.html#agenda" class="mobile-nav-link">Agenda</a>
+                        <a href="index.html#kontak" class="mobile-nav-link">Kontak</a>
+                        <div class="pt-4 border-t border-gray-200">
+                            <a href="index.html#ppdb"
+                                class="block bg-gradient-to-r from-sunJoy to-yellow-400 text-softBlack font-bold py-3 px-6 rounded-xl text-center shadow-lg">
+                                Daftar PPDB →
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Modal -->
+    <div id="searchModal"
+        class="fixed inset-0 bg-gray-900/80 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-start justify-center pt-20">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl mx-4 transform scale-95 transition-transform duration-300"
+            id="searchPanel">
+            <div class="p-6">
+                <div class="flex items-center mb-4">
+                    <span class="text-2xl mr-3">🔍</span>
+                    <input type="text" id="searchInput" placeholder="Cari informasi sekolah..."
+                        class="flex-1 text-lg outline-none" autofocus>
+                    <button id="closeSearch" class="text-gray-400 hover:text-eduBlue-main text-3xl ml-4">×</button>
+                </div>
+                <div class="border-t border-gray-200 pt-4">
+                    <p class="text-sm text-gray-500 mb-4">Saran pencarian:</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1 bg-gray-100 rounded-full text-sm cursor-pointer hover:bg-eduBlue-light/20">PPDB</span>
+                        <span
+                            class="px-3 py-1 bg-gray-100 rounded-full text-sm cursor-pointer hover:bg-eduBlue-light/20">Fasilitas</span>
+                        <span
+                            class="px-3 py-1 bg-gray-100 rounded-full text-sm cursor-pointer hover:bg-eduBlue-light/20">Guru</span>
+                        <span
+                            class="px-3 py-1 bg-gray-100 rounded-full text-sm cursor-pointer hover:bg-eduBlue-light/20">Ekstrakurikuler</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="pt-32 pb-8 bg-gradient-to-r from-eduBlue-main to-eduBlue-light">
+        <div class="container mx-auto px-6">
+            <nav class="flex items-center space-x-2 text-white text-sm">
+                <a href="index.html" class="hover:underline">Home</a>
+                <span>/</span>
+                <span>Guru & Staff</span>
+            </nav>
+            <h1 class="font-display text-4xl font-bold text-white mt-4">Tenaga Pendidik & Pengajar</h1>
+            <p class="text-white/90 mt-2">Tim profesional yang siap mendampingi pertumbuhan siswa Anda</p>
+        </div>
+    </div>
+
+    <!-- Teachers Grid Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-eduBlue-main font-semibold text-sm uppercase tracking-wider">Tim Profesional Kami</span>
+                <h2 class="font-display text-4xl font-bold text-gray-900 mt-4 mb-6">Guru-Guru Berpengalaman</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Guru-guru berpengalaman dan berdedikasi tinggi yang siap membimbing dan mengembangkan potensi setiap
+                    siswa dengan penuh kasih sayang.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Teacher 1 -->
+                <div class="teacher-card group">
+                    <div class="relative mb-6">
+                        <div
+                            class="w-32 h-32 mx-auto bg-gradient-to-br from-eduBlue-main to-eduBlue-light rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            DR
+                        </div>
+                        <div
+                            class="absolute bottom-0 right-1/2 translate-x-1/2 translate-y-2 bg-sunJoy text-softBlack text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                            Kepala Sekolah
+                        </div>
+                    </div>
+                    <div class="text-center pt-4">
+                        <h3 class="font-display text-xl font-bold text-gray-900 mb-1">Drs. H. Rahmat, M.Pd</h3>
+                        <p class="text-eduBlue-main font-semibold text-sm mb-3">Kepala Sekolah</p>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Berpengalaman 25+ tahun di bidang pendidikan. Lulusan S2 Manajemen Pendidikan UNJ.
+                            Berdedikasi dalam meningkatkan kualitas pendidikan dan pembentukan karakter siswa.
+                        </p>
+                        <div class="text-sm text-gray-500 space-y-1">
+                            <p>📚 Pendidikan: S2 Manajemen Pendidikan</p>
+                            <p>🏢 Institusi: UNJ</p>
+                            <p>📅 Pengalaman: 25 tahun</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher 2 -->
+                <div class="teacher-card group">
+                    <div class="relative mb-6">
+                        <div
+                            class="w-32 h-32 mx-auto bg-gradient-to-br from-careGreen to-green-400 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            SA
+                        </div>
+                        <div
+                            class="absolute bottom-0 right-1/2 translate-x-1/2 translate-y-2 bg-eduBlue-light/20 text-eduBlue-dark text-xs font-bold px-3 py-1 rounded-full shadow-md border border-eduBlue-main">
+                            Wakil Kepala
+                        </div>
+                    </div>
+                    <div class="text-center pt-4">
+                        <h3 class="font-display text-xl font-bold text-gray-900 mb-1">Siti Aminah, S.Pd</h3>
+                        <p class="text-eduBlue-main font-semibold text-sm mb-3">Wakil Kepala Sekolah</p>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Spesialis kurikulum dan pengembangan pembelajaran. Pengalaman 18 tahun mengajar. Aktif
+                            dalam inovasi pembelajaran di sekolah.
+                        </p>
+                        <div class="text-sm text-gray-500 space-y-1">
+                            <p>📚 Pendidikan: S1 Pendidikan</p>
+                            <p>🏢 Spesialisasi: Kurikulum</p>
+                            <p>📅 Pengalaman: 18 tahun</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher 3 -->
+                <div class="teacher-card group">
+                    <div class="relative mb-6">
+                        <div
+                            class="w-32 h-32 mx-auto bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            AN
+                        </div>
+                    </div>
+                    <div class="text-center pt-4">
+                        <h3 class="font-display text-xl font-bold text-gray-900 mb-1">Ahmad Nur, S.Pd</h3>
+                        <p class="text-eduBlue-main font-semibold text-sm mb-3">Guru Matematika</p>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Guru Matematika berprestasi. Sering menjuarai lomba Olimpiade Matematika tingkat nasional.
+                            Metode pembelajaran interaktif dan menyenangkan.
+                        </p>
+                        <div class="text-sm text-gray-500 space-y-1">
+                            <p>📚 Pendidikan: S1 Pendidikan Matematika</p>
+                            <p>🏢 Mata Pelajaran: Matematika</p>
+                            <p>📅 Pengalaman: 15 tahun</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher 4 -->
+                <div class="teacher-card group">
+                    <div class="relative mb-6">
+                        <div
+                            class="w-32 h-32 mx-auto bg-gradient-to-br from-sunJoy to-orange-400 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            RW
+                        </div>
+                    </div>
+                    <div class="text-center pt-4">
+                        <h3 class="font-display text-xl font-bold text-gray-900 mb-1">Rina Wati, S.Pd</h3>
+                        <p class="text-eduBlue-main font-semibold text-sm mb-3">Guru Bahasa Indonesia</p>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Pengajar Bahasa Indonesia dengan metode pembelajaran kreatif dan menyenangkan. Pemenang
+                            berbagai penghargaan pendidik berprestasi.
+                        </p>
+                        <div class="text-sm text-gray-500 space-y-1">
+                            <p>📚 Pendidikan: S1 Pendidikan Bahasa Indonesia</p>
+                            <p>🏢 Mata Pelajaran: Bahasa Indonesia</p>
+                            <p>📅 Pengalaman: 16 tahun</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher 5 -->
+                <div class="teacher-card group">
+                    <div class="relative mb-6">
+                        <div
+                            class="w-32 h-32 mx-auto bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            BT
+                        </div>
+                    </div>
+                    <div class="text-center pt-4">
+                        <h3 class="font-display text-xl font-bold text-gray-900 mb-1">Budi Santoso, S.Pd</h3>
+                        <p class="text-eduBlue-main font-semibold text-sm mb-3">Guru IPA</p>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Spesialis IPA dengan laboratorium praktikum. Membuat pembelajaran sains jadi menarik.
+                            Fokus pada pembelajaran eksperimental.
+                        </p>
+                        <div class="text-sm text-gray-500 space-y-1">
+                            <p>📚 Pendidikan: S1 Pendidikan IPA</p>
+                            <p>🏢 Mata Pelajaran: IPA</p>
+                            <p>📅 Pengalaman: 14 tahun</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher 6 -->
+                <div class="teacher-card group">
+                    <div class="relative mb-6">
+                        <div
+                            class="w-32 h-32 mx-auto bg-gradient-to-br from-pink-400 to-red-400 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            DL
+                        </div>
+                    </div>
+                    <div class="text-center pt-4">
+                        <h3 class="font-display text-xl font-bold text-gray-900 mb-1">Dewi Lestari, S.Pd</h3>
+                        <p class="text-eduBlue-main font-semibold text-sm mb-3">Guru Bahasa Inggris</p>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Pengalaman mengajar Bahasa Inggris 12 tahun. Lulusan program English Education. Fasih
+                            berkomunikasi dalam Bahasa Inggris.
+                        </p>
+                        <div class="text-sm text-gray-500 space-y-1">
+                            <p>📚 Pendidikan: S1 English Education</p>
+                            <p>🏢 Mata Pelajaran: Bahasa Inggris</p>
+                            <p>📅 Pengalaman: 12 tahun</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher 7 -->
+                <div class="teacher-card group">
+                    <div class="relative mb-6">
+                        <div
+                            class="w-32 h-32 mx-auto bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            HS
+                        </div>
+                    </div>
+                    <div class="text-center pt-4">
+                        <h3 class="font-display text-xl font-bold text-gray-900 mb-1">Hendra Suryanto, S.Pd</h3>
+                        <p class="text-eduBlue-main font-semibold text-sm mb-3">Guru Pendidikan Jasmani</p>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Guru Pendidikan Jasmani bersertifikat. Pembina berbagai kegiatan olahraga dan ekstrakurikuler
+                            fisik.
+                        </p>
+                        <div class="text-sm text-gray-500 space-y-1">
+                            <p>📚 Pendidikan: S1 Penjaskes</p>
+                            <p>🏢 Mata Pelajaran: Pendidikan Jasmani</p>
+                            <p>📅 Pengalaman: 13 tahun</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher 8 -->
+                <div class="teacher-card group">
+                    <div class="relative mb-6">
+                        <div
+                            class="w-32 h-32 mx-auto bg-gradient-to-br from-indigo-500 to-blue-500 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            NA
+                        </div>
+                    </div>
+                    <div class="text-center pt-4">
+                        <h3 class="font-display text-xl font-bold text-gray-900 mb-1">Nur Aini, S.Pd</h3>
+                        <p class="text-eduBlue-main font-semibold text-sm mb-3">Guru Seni & Musik</p>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Guru seni dan musik profesional. Pembina tim seni sekolah yang aktif mengikuti berbagai
+                            kompetisi.
+                        </p>
+                        <div class="text-sm text-gray-500 space-y-1">
+                            <p>📚 Pendidikan: S1 Seni Musik</p>
+                            <p>🏢 Mata Pelajaran: Seni & Musik</p>
+                            <p>📅 Pengalaman: 11 tahun</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher 9 -->
+                <div class="teacher-card group">
+                    <div class="relative mb-6">
+                        <div
+                            class="w-32 h-32 mx-auto bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            WN
+                        </div>
+                    </div>
+                    <div class="text-center pt-4">
+                        <h3 class="font-display text-xl font-bold text-gray-900 mb-1">Winda Nirmala, S.Pd</h3>
+                        <p class="text-eduBlue-main font-semibold text-sm mb-3">Guru Pendidikan Agama</p>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Guru pendidikan agama bersertifikat. Fokus pada pembentukan karakter dan nilai-nilai moral
+                            siswa.
+                        </p>
+                        <div class="text-sm text-gray-500 space-y-1">
+                            <p>📚 Pendidikan: S1 Pendidikan Agama</p>
+                            <p>🏢 Mata Pelajaran: Pendidikan Agama</p>
+                            <p>📅 Pengalaman: 10 tahun</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staff Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-display text-4xl font-bold text-gray-900 mt-4 mb-6">Tim Pendukung</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Staff administratif dan pendukung yang membantu kelancaran operasional sekolah.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card text-center">
+                    <div class="text-4xl mb-3">💼</div>
+                    <h3 class="font-bold text-gray-900 mb-1">Administrasi</h3>
+                    <p class="text-sm text-gray-600">5 staff profesional</p>
+                </div>
+                <div class="card text-center">
+                    <div class="text-4xl mb-3">🏥</div>
+                    <h3 class="font-bold text-gray-900 mb-1">Kesehatan</h3>
+                    <p class="text-sm text-gray-600">2 petugas UKS</p>
+                </div>
+                <div class="card text-center">
+                    <div class="text-4xl mb-3">🧹</div>
+                    <h3 class="font-bold text-gray-900 mb-1">Kebersihan</h3>
+                    <p class="text-sm text-gray-600">4 petugas kebersihan</p>
+                </div>
+                <div class="card text-center">
+                    <div class="text-4xl mb-3">🔧</div>
+                    <h3 class="font-bold text-gray-900 mb-1">Pemeliharaan</h3>
+                    <p class="text-sm text-gray-600">3 petugas pemeliharaan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-eduBlue-main to-eduBlue-light text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-sunJoy rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h2 class="font-display text-4xl font-bold mb-6">Tertarik Bergabung?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+                Kami selalu terbuka untuk menerima guru dan staff baru yang berdedikasi.
+            </p>
+            <a href="index.html#kontak"
+                class="inline-block bg-sunJoy hover:bg-yellow-400 text-softBlack font-bold py-4 px-8 rounded-xl shadow-lg transition-all hover:-translate-y-1 active:scale-95">
+                Hubungi Kami
+                <span class="ml-2">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- School Info -->
+                <div class="col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-eduBlue-main to-eduBlue-light rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-xl">SD</span>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-white text-xl">SD NEGERI KOTA 01</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Unggul & Berkarakter</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4 max-w-md">
+                        Memberikan pendidikan berkualitas dengan fasilitas modern dan tenaga pendidik profesional sejak
+                        1998.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-display font-bold text-white mb-4">Link Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-sunJoy transition-colors">Tentang Kami</a></li>
+                        <li><a href="teachers.html" class="hover:text-sunJoy transition-colors">Guru & Staff</a></li>
+                        <li><a href="facilities.html" class="hover:text-sunJoy transition-colors">Fasilitas</a></li>
+                        <li><a href="news.html" class="hover:text-sunJoy transition-colors">Berita</a></li>
+                        <li><a href="gallery.html" class="hover:text-sunJoy transition-colors">Galeri</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-display font-bold text-white mb-4">Kontak</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <span class="mr-2">📍</span>
+                            <span>Jl. Pendidikan No. 123, Jakarta Pusat 10110</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="mr-2">📞</span>
+                            <span>(021) 1234-5678</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="mr-2">📱</span>
+                            <span>0812-3456-7890</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p class="text-gray-400">
+                    © 2026 SD Negeri Kota 01. All rights reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="privacy-policy.html" class="hover:text-sunJoy transition-colors">Privacy Policy</a>
+                    <a href="terms-and-conditions.html" class="hover:text-sunJoy transition-colors">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop"
+        class="fixed bottom-8 right-8 w-12 h-12 bg-eduBlue-main hover:bg-eduBlue-dark text-white rounded-full shadow-lg flex items-center justify-center transition-all opacity-0 pointer-events-none z-40">
+        ↑
+    </button>
+
+    <script>
+        // ===== Mobile Menu =====
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+            mobileMenuPanel.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenuFunc() {
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+            mobileMenuPanel.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) closeMobileMenuFunc();
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                setTimeout(closeMobileMenuFunc, 300);
+            });
+        });
+
+        // ===== Search Modal =====
+        const searchButton = document.getElementById('searchButton');
+        const searchModal = document.getElementById('searchModal');
+        const searchPanel = document.getElementById('searchPanel');
+        const closeSearch = document.getElementById('closeSearch');
+        const searchInput = document.getElementById('searchInput');
+
+        function openSearch() {
+            searchModal.classList.remove('opacity-0', 'pointer-events-none');
+            searchPanel.classList.remove('scale-95');
+            searchPanel.classList.add('scale-100');
+            setTimeout(() => searchInput.focus(), 100);
+        }
+
+        function closeSearchFunc() {
+            searchModal.classList.add('opacity-0', 'pointer-events-none');
+            searchPanel.classList.add('scale-95');
+            searchPanel.classList.remove('scale-100');
+            searchInput.value = '';
+        }
+
+        searchButton.addEventListener('click', openSearch);
+        closeSearch.addEventListener('click', closeSearchFunc);
+        searchModal.addEventListener('click', (e) => {
+            if (e.target === searchModal) closeSearchFunc();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                openSearch();
+            }
+            if (e.key === 'Escape') {
+                closeSearchFunc();
+                closeMobileMenuFunc();
+            }
+        });
+
+        // ===== Back to Top Button =====
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== Header Hide on Scroll =====
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+
+            if (currentScroll <= 50) {
+                header.style.transform = 'translateY(0)';
+            } else if (currentScroll > lastScroll && currentScroll > 200) {
+                header.style.transform = 'translateY(-100%)';
+            } else if (currentScroll < lastScroll) {
+                header.style.transform = 'translateY(0)';
+            }
+
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+
+</html>

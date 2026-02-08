@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Syarat dan Ketentuan SD Negeri Kota 01 - Kebijakan Sekolah">
+    <link href="./input.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <title>Syarat & Ketentuan - SD Negeri Kota 01</title>
+</head>
+
+<body class="font-body antialiased">
+    <!-- Header -->
+    <header class="w-full fixed top-0 z-50 shadow-lg transition-transform duration-300">
+        <!-- Top Bar -->
+        <div class="bg-eduBlue-main text-white py-2 hidden md:block">
+            <div class="container mx-auto px-6 flex justify-between items-center text-xs font-medium">
+                <div class="flex items-center space-x-6">
+                    <a href="https://wa.me/628123456789"
+                        class="flex items-center hover:text-sunJoy transition-colors duration-300">
+                        <span class="mr-2">📞</span> Chat Admin: 0812-3456-7890
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="bg-white border-b border-gray-100">
+            <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+                <a href="index.html" class="flex items-center group">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-eduBlue-main to-eduBlue-light rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                        <span class="text-white font-bold text-xl">SD</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="font-display font-bold text-eduBlue-main text-xl leading-none">SD NEGERI KOTA 01</h1>
+                        <span class="text-[10px] text-gray-500 font-medium tracking-widest uppercase mt-1">Unggul &
+                            Berkarakter</span>
+                    </div>
+                </a>
+
+                <ul class="hidden lg:flex items-center space-x-8">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="about.html" class="nav-link">Tentang</a></li>
+                    <li><a href="teachers.html" class="nav-link">Guru</a></li>
+                    <li><a href="facilities.html" class="nav-link">Fasilitas</a></li>
+                    <li><a href="news.html" class="nav-link">Berita</a></li>
+                    <li><a href="gallery.html" class="nav-link">Galeri</a></li>
+                    <li><a href="index.html#agenda" class="nav-link">Agenda</a></li>
+                    <li><a href="index.html#kontak" class="nav-link">Kontak</a></li>
+                </ul>
+
+                <div class="flex items-center space-x-4">
+                    <a href="ppdb.html"
+                        class="hidden sm:flex items-center bg-gradient-to-r from-sunJoy to-yellow-400 hover:from-yellow-400 hover:to-sunJoy text-softBlack font-bold py-3 px-6 rounded-xl shadow-lg shadow-sunJoy/30 transition-all hover:-translate-y-1 active:scale-95">
+                        Daftar PPDB
+                        <span class="ml-2">→</span>
+                    </a>
+                    <button id="mobileMenuButton"
+                        class="lg:hidden text-eduBlue-main text-3xl hover:scale-110 transition-transform">☰</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="lg:hidden fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300">
+            <div id="mobileMenuPanel"
+                class="fixed right-0 top-0 h-full w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3 class="font-display font-bold text-eduBlue-main text-xl">Menu</h3>
+                        <button id="closeMobileMenu" class="text-gray-500 hover:text-eduBlue-main text-3xl">×</button>
+                    </div>
+                    <nav class="space-y-4">
+                        <a href="index.html" class="mobile-nav-link">Beranda</a>
+                        <a href="about.html" class="mobile-nav-link">Tentang</a>
+                        <a href="teachers.html" class="mobile-nav-link">Guru</a>
+                        <a href="facilities.html" class="mobile-nav-link">Fasilitas</a>
+                        <a href="news.html" class="mobile-nav-link">Berita</a>
+                        <a href="gallery.html" class="mobile-nav-link">Galeri</a>
+                        <a href="index.html#agenda" class="mobile-nav-link">Agenda</a>
+                        <a href="index.html#kontak" class="mobile-nav-link">Kontak</a>
+                        <div class="pt-4 border-t border-gray-200">
+                            <a href="ppdb.html"
+                                class="block bg-gradient-to-r from-sunJoy to-yellow-400 text-softBlack font-bold py-3 px-6 rounded-xl text-center shadow-lg">
+                                Daftar PPDB →
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="pt-32 pb-8 bg-gradient-to-r from-eduBlue-main to-eduBlue-light">
+        <div class="container mx-auto px-6">
+            <nav class="flex items-center space-x-2 text-white text-sm">
+                <a href="index.html" class="hover:underline">Home</a>
+                <span>/</span>
+                <span>Syarat & Ketentuan</span>
+            </nav>
+            <h1 class="font-display text-4xl font-bold text-white mt-4">Syarat & Ketentuan</h1>
+            <p class="text-white/90 mt-2">Kebijakan dan Aturan Penggunaan</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="bg-purple-50 border-l-4 border-purple-500 p-6 rounded-r-lg mb-8">
+                <p class="text-gray-700">
+                    <strong>Terakhir Diperbarui:</strong> 1 Januari 2026
+                </p>
+                <p class="text-gray-600 text-sm mt-2">
+                    Dengan mendaftar dan menjadi siswa di SD Negeri Kota 01, Anda menyetujui semua syarat dan ketentuan di bawah ini.
+                </p>
+            </div>
+
+            <!-- 1. Definisi -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">1. Definisi</h2>
+                <div class="space-y-3">
+                    <div class="card">
+                        <p class="font-semibold text-gray-900">"Sekolah" atau "Kami"</p>
+                        <p class="text-gray-600 text-sm">SD Negeri Kota 01 dan semua pejabat, karyawan, dan agen yang bertindak atas nama sekolah.</p>
+                    </div>
+                    <div class="card">
+                        <p class="font-semibold text-gray-900">"Siswa"</p>
+                        <p class="text-gray-600 text-sm">Individu yang terdaftar sebagai peserta didik di SD Negeri Kota 01.</p>
+                    </div>
+                    <div class="card">
+                        <p class="font-semibold text-gray-900">"Orang Tua/Wali"</p>
+                        <p class="text-gray-600 text-sm">Orang tua atau wali yang bertanggung jawab terhadap siswa sesuai dengan hukum yang berlaku.</p>
+                    </div>
+                    <div class="card">
+                        <p class="font-semibold text-gray-900">"Website"</p>
+                        <p class="text-gray-600 text-sm">Website resmi SD Negeri Kota 01 di sdnegerikota01.sch.id</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Penerimaan Syarat & Ketentuan -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">2. Penerimaan Syarat & Ketentuan</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Dengan melakukan pendaftaran PPDB, menggunakan website kami, atau menjadi siswa di SD Negeri Kota 01, Anda dan/atau orang tua/wali Anda secara otomatis setuju terikat oleh seluruh Syarat & Ketentuan ini. Jika Anda tidak setuju dengan salah satu bagian dari syarat ini, mohon jangan melanjutkan pendaftaran.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Kami berhak untuk mengubah, memodifikasi, atau memperbarui Syarat & Ketentuan ini kapan saja tanpa pemberitahuan sebelumnya. Penggunaan website atau keanggotaan di sekolah yang berkelanjutan setelah perubahan berarti Anda menerima perubahan tersebut.
+                </p>
+            </div>
+
+            <!-- 3. Penerimaan Siswa -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">3. Persyaratan & Proses Penerimaan</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    SD Negeri Kota 01 berhak untuk:
+                </p>
+                
+                <div class="space-y-3">
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-4">✓</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Menentukan Kriteria Penerimaan</p>
+                            <p class="text-sm text-gray-600">Menetapkan standar usia, dokumen, dan persyaratan lainnya untuk penerimaan siswa baru.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-4">✓</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Menolak Pendaftaran</p>
+                            <p class="text-sm text-gray-600">Menolak permohonan pendaftaran yang tidak memenuhi persyaratan atau atas dasar kebijakan sekolah.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-4">✓</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Verifikasi Data</p>
+                            <p class="text-sm text-gray-600">Melakukan verifikasi dan validasi semua data yang Anda berikan dalam proses pendaftaran.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-4">✓</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Pembatalan Penerimaan</p>
+                            <p class="text-sm text-gray-600">Membatalkan penerimaan siswa jika ditemukan informasi palsu atau data yang tidak akurat pada kemudian hari.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Tanggung Jawab Siswa -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">4. Tanggung Jawab & Kewajiban Siswa</h2>
+                
+                <div class="card bg-blue-50 border-l-4 border-eduBlue-main mb-6">
+                    <h3 class="font-bold text-gray-900 mb-4">Setiap siswa berkewajiban untuk:</h3>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="card">
+                        <h4 class="font-semibold text-gray-900 mb-2">🎓 Kehadiran & Ketepatan Waktu</h4>
+                        <p class="text-gray-600 text-sm">
+                            Hadir tepat waktu ke sekolah, mengikuti semua kegiatan pembelajaran, dan memiliki tingkat kehadiran minimal 90% per semester.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h4 class="font-semibold text-gray-900 mb-2">📚 Tanggung Jawab Akademik</h4>
+                        <p class="text-gray-600 text-sm">
+                            Mengerjakan semua tugas dan pekerjaan rumah (PR) dengan serius, mengikuti ujian, dan berusaha mencapai prestasi akademik terbaik.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h4 class="font-semibold text-gray-900 mb-2">👔 Tata Tertib & Etika</h4>
+                        <p class="text-gray-600 text-sm">
+                            Mematuhi tata tertib sekolah, berpakaian sesuai ketentuan, berbicara sopan, dan menghormati guru serta sesama siswa.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h4 class="font-semibold text-gray-900 mb-2">🚫 Larangan Perilaku</h4>
+                        <p class="text-gray-600 text-sm">
+                            Dilarang membawa, menggunakan, atau menyebarkan narkoba, alkohol, senjata, atau barang-barang terlarang lainnya di lingkungan sekolah.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h4 class="font-semibold text-gray-900 mb-2">💼 Tanggung Jawab Finansial</h4>
+                        <p class="text-gray-600 text-sm">
+                            Orang tua/wali berkewajiban membayar biaya pendaftaran, uang sekolah, dan biaya-biaya lainnya sesuai dengan jadwal yang ditetapkan sekolah.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h4 class="font-semibold text-gray-900 mb-2">📱 Tanggung Jawab Digital</h4>
+                        <p class="text-gray-600 text-sm">
+                            Menggunakan teknologi dan internet dengan bijak, tidak melakukan cyberbullying, dan menghormati privasi orang lain.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Tanggung Jawab Orang Tua/Wali -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">5. Tanggung Jawab Orang Tua/Wali</h2>
+                
+                <div class="space-y-4">
+                    <div class="card">
+                        <h4 class="font-semibold text-gray-900 mb-2">📝 Informasi Akurat</h4>
+                        <p class="text-gray-600 text-sm">
+                            Memberikan semua informasi yang akurat, lengkap, dan terpercaya dalam formulir pendaftaran dan dokumen-dokumen lainnya.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h4 class="font-semibold text-gray-900 mb-2">💰 Pembayaran Biaya</h4>
+                        <p class="text-gray-600 text-sm">
+                            Membayar semua biaya sekolah sesuai dengan jadwal yang ditetapkan, termasuk biaya pendaftaran, uang sekolah, dan biaya operasional.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h4 class="font-semibold text-gray-900 mb-2">📞 Komunikasi Rutin</h4>
+                        <p class="text-gray-600 text-sm">
+                            Menjaga komunikasi yang baik dengan sekolah, merespons informasi penting, dan hadir pada pertemuan orang tua yang diadakan sekolah.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h4 class="font-semibold text-gray-900 mb-2">🏠 Pendukung Belajar</h4>
+                        <p class="text-gray-600 text-sm">
+                            Mendukung pembelajaran siswa di rumah, memantau perkembangan akademik, dan memastikan siswa mengerjakan tugas dengan baik.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h4 class="font-semibold text-gray-900 mb-2">🤝 Kerjasama Sekolah</h4>
+                        <p class="text-gray-600 text-sm">
+                            Bekerja sama dengan sekolah dalam mengatasi permasalahan disiplin dan mengimplementasikan kebijakan sekolah di rumah.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Kebijakan Disiplin -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">6. Kebijakan Disiplin & Tata Tertib</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    SD Negeri Kota 01 memiliki kebijakan disiplin yang ketat untuk memastikan lingkungan belajar yang kondusif dan aman. Pelanggaran tata tertib akan dikenakan sanksi mulai dari:
+                </p>
+
+                <div class="space-y-3">
+                    <div class="flex items-start">
+                        <span class="bg-yellow-400 text-softBlack rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 text-sm font-bold">1</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Teguran Lisan</p>
+                            <p class="text-sm text-gray-600">Untuk pelanggaran ringan pertama kali.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="bg-orange-400 text-softBlack rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 text-sm font-bold">2</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Surat Peringatan</p>
+                            <p class="text-sm text-gray-600">Untuk pelanggaran yang diulang atau pelanggaran sedang.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="bg-red-400 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 text-sm font-bold">3</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Skorsing (Penghentian Sementara)</p>
+                            <p class="text-sm text-gray-600">Untuk pelanggaran berat, termasuk tindakan kekerasan atau membawa barang terlarang.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 text-sm font-bold">4</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Ekspulsi (Pengeluaran Permanen)</p>
+                            <p class="text-sm text-gray-600">Untuk pelanggaran sangat berat atau berulang kali menerima sanksi sebelumnya.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Kesehatan & Keselamatan -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">7. Kesehatan & Keselamatan</h2>
+                
+                <div class="bg-gradient-to-r from-careGreen/10 to-green-100 border border-careGreen/30 rounded-lg p-6 mb-6">
+                    <p class="text-gray-700 font-semibold mb-4">
+                        Sekolah berkomitmen untuk menjaga kesehatan dan keselamatan semua siswa. Kami memiliki:
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>✓ Unit Kesehatan Sekolah (UKS) yang buka setiap hari sekolah</li>
+                        <li>✓ Staf yang terlatih dalam penanganan pertama dan CPR</li>
+                        <li>✓ Protokol keselamatan yang jelas untuk kegiatan fisik</li>
+                        <li>✓ Audit keselamatan dan pemeriksaan fasilitas secara berkala</li>
+                        <li>✓ Asuransi kesehatan untuk semua siswa</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4 class="font-semibold text-gray-900 mb-2">Penyakit Menular</h4>
+                    <p class="text-gray-600 text-sm">
+                        Jika siswa menderita penyakit menular, orang tua/wali harus segera menginformasikan sekolah dan siswa tidak boleh masuk sekolah sampai dinyatakan sehat oleh dokter.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 8. Penggunaan Website & Media Sosial -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">8. Penggunaan Website & Media Sosial</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Dengan mengakses website kami, Anda setuju untuk:
+                </p>
+                
+                <div class="space-y-3">
+                    <div class="card border-l-4 border-eduBlue-main">
+                        <p class="font-semibold text-gray-900">Tidak Menggunakan Konten Secara Ilegal</p>
+                        <p class="text-sm text-gray-600">Tidak menyalin, menjual, atau mendistribusikan konten website kami tanpa izin tertulis.</p>
+                    </div>
+                    <div class="card border-l-4 border-careGreen">
+                        <p class="font-semibold text-gray-900">Tidak Melakukan Hacking</p>
+                        <p class="text-sm text-gray-600">Tidak mencoba meretas, mengganggu, atau membahayakan sistem keamanan website kami.</p>
+                    </div>
+                    <div class="card border-l-4 border-sunJoy">
+                        <p class="font-semibold text-gray-900">Sopan Santun Online</p>
+                        <p class="text-sm text-gray-600">Tidak mengirim komentar atau pesan yang bersifat rasis, diskriminatif, atau melecehkan.</p>
+                    </div>
+                    <div class="card border-l-4 border-purple-500">
+                        <p class="font-semibold text-gray-900">Tidak Spam</p>
+                        <p class="text-sm text-gray-600">Tidak mengirim pesan promosi, iklan, atau konten spam melalui formulir kontak kami.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. Hak Cipta & Properti Intelektual -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">9. Hak Cipta & Properti Intelektual</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Semua konten di website kami, termasuk teks, grafis, logo, gambar, dan video, dilindungi oleh hak cipta dan hukum properti intelektual lainnya. Dilarang menggunakan konten ini tanpa izin tertulis dari sekolah.
+                </p>
+                
+                <div class="card bg-blue-50 border-l-4 border-eduBlue-main">
+                    <p class="font-semibold text-gray-900 mb-3">Lisensi Terbatas</p>
+                    <p class="text-gray-600 text-sm">
+                        Kami memberikan Anda lisensi terbatas untuk mengakses dan menggunakan website kami untuk tujuan pribadi dan pendidikan. Anda tidak boleh memproduksi, mendistribusikan, atau mengubah konten tanpa izin kami.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 10. Pembatasan Tanggung Jawab -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">10. Pembatasan Tanggung Jawab</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Dalam batas maksimal yang diizinkan oleh hukum, SD Negeri Kota 01 tidak akan bertanggung jawab atas:
+                </p>
+                
+                <div class="space-y-2 text-gray-600">
+                    <div class="flex items-start">
+                        <span class="text-lg mr-3">•</span>
+                        <span>Kerugian tidak langsung, insidental, atau konsekuensial yang timbul dari penggunaan atau ketidakmampuan menggunakan website kami</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-lg mr-3">•</span>
+                        <span>Kehilangan data, atau gangguan layanan karena faktor di luar kontrol kami</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-lg mr-3">•</span>
+                        <span>Kerusakan perangkat atau perangkat lunak yang digunakan untuk mengakses website</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-lg mr-3">•</span>
+                        <span>Tindakan atau kelalaian orang lain yang mengakses website kami</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11. Ganti Rugi -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">11. Kewajiban Ganti Rugi</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Anda setuju untuk mengganti rugi, membela, dan menahan tidak ada SD Negeri Kota 01 dari dan terhadap segala klaim, kerusakan, kerugian, kewajiban, dan biaya (termasuk biaya hukum) yang timbul dari:
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-gray-600 mt-4">
+                    <li>Pelanggaran Anda terhadap Syarat & Ketentuan ini</li>
+                    <li>Penggunaan Anda terhadap website atau layanan kami</li>
+                    <li>Pelanggaran Anda terhadap hukum atau hak pihak ketiga</li>
+                    <li>Konten atau informasi yang Anda kirimkan kepada kami</li>
+                </ul>
+            </div>
+
+            <!-- 12. Hukum & Yurisdiksi -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">12. Hukum & Yurisdiksi</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Syarat & Ketentuan ini diatur dan ditafsirkan sesuai dengan hukum negara Republik Indonesia, tanpa mempertimbangkan prinsip-prinsip konflik hukumnya.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Setiap perselisihan yang timbul dari atau terkait dengan Syarat & Ketentuan ini akan diselesaikan melalui:
+                </p>
+                <ol class="list-decimal list-inside space-y-2 text-gray-600 mt-4">
+                    <li>Negosiasi langsung antara pihak-pihak yang terlibat</li>
+                    <li>Mediasi, jika negosiasi gagal</li>
+                    <li>Arbitrase atau litigasi di pengadilan yang berwenang di Indonesia</li>
+                </ol>
+            </div>
+
+            <!-- 13. Perubahan Syarat -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">13. Perubahan Syarat & Ketentuan</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Kami berhak mengubah, memodifikasi, menambah, atau mengurangi Syarat & Ketentuan ini kapan saja. Perubahan akan ditinjau ulang di halaman ini dengan pembaruan tanggal "Terakhir Diperbarui". Penggunaan website atau keanggotaan di sekolah yang berkelanjutan setelah perubahan berarti Anda menerima Syarat & Ketentuan yang telah diperbarui.
+                </p>
+            </div>
+
+            <!-- 14. Hubungi Kami -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">14. Hubungi Kami</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Jika Anda memiliki pertanyaan tentang Syarat & Ketentuan ini, silakan hubungi kami:
+                </p>
+                
+                <div class="bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg p-8">
+                    <h4 class="font-bold text-xl mb-4">SD Negeri Kota 01</h4>
+                    <div class="space-y-3">
+                        <p>📍 Jalan Pendidikan No. 1, Kota, Provinsi</p>
+                        <p>📞 Telepon: (021) 1234-5678</p>
+                        <p>📱 WhatsApp: 0812-3456-7890</p>
+                        <p>📧 Email: info@sdnegerikota01.sch.id</p>
+                        <p>🌐 Website: <a href="index.html" class="underline hover:text-sunJoy">sdnegerikota01.sch.id</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-orange-50 to-red-50">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Siap Mendaftarkan Putra-Putri Anda?</h3>
+            <p class="text-gray-600 mb-8">Dengan mendaftar, Anda dan orang tua/wali setuju dengan semua Syarat & Ketentuan di atas.</p>
+            <a href="ppdb.html"
+                class="inline-flex items-center bg-gradient-to-r from-sunJoy to-yellow-400 hover:from-yellow-400 hover:to-sunJoy text-softBlack font-bold py-4 px-8 rounded-xl shadow-lg transition-all hover:-translate-y-1 active:scale-95">
+                Lanjut Pendaftaran PPDB
+                <span class="ml-2">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-eduBlue-main to-eduBlue-light rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-xl">SD</span>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-white text-xl">SD NEGERI KOTA 01</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Unggul & Berkarakter</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-bold text-white mb-4">Link Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-sunJoy transition-colors">Tentang</a></li>
+                        <li><a href="ppdb.html" class="hover:text-sunJoy transition-colors">PPDB</a></li>
+                        <li><a href="facilities.html" class="hover:text-sunJoy transition-colors">Fasilitas</a></li>
+                        <li><a href="gallery.html" class="hover:text-sunJoy transition-colors">Galeri</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-bold text-white mb-4">Kontak</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>📞 (021) 1234-5678</li>
+                        <li>📱 0812-3456-7890</li>
+                        <li>📧 info@sdnegerikota01.sch.id</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p class="text-gray-400">© 2026 SD Negeri Kota 01. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="privacy-policy.html" class="hover:text-sunJoy transition-colors">Privacy Policy</a>
+                    <a href="terms-and-conditions.html" class="hover:text-sunJoy transition-colors">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop"
+        class="fixed bottom-8 right-8 w-12 h-12 bg-eduBlue-main hover:bg-eduBlue-dark text-white rounded-full shadow-lg flex items-center justify-center transition-all opacity-0 pointer-events-none z-40">
+        ↑
+    </button>
+
+    <script>
+        // Mobile Menu
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+            mobileMenuPanel.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+            mobileMenuPanel.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        });
+
+        // Back to Top
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>

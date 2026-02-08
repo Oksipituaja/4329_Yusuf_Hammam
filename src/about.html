@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Tentang SD Negeri Kota 01 - Visi, Misi, dan Nilai Inti Sekolah Kami">
+    <link href="./input.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <title>Tentang Kami - SD Negeri Kota 01</title>
+</head>
+
+<body class="font-body antialiased">
+    <!-- Header -->
+    <header class="w-full fixed top-0 z-50 shadow-lg transition-transform duration-300">
+        <!-- Top Bar -->
+        <div class="bg-eduBlue-main text-white py-2 hidden md:block">
+            <div class="container mx-auto px-6 flex justify-between items-center text-xs font-medium">
+                <div class="flex items-center space-x-6">
+                    <a href="https://wa.me/628123456789"
+                        class="flex items-center hover:text-sunJoy transition-colors duration-300">
+                        <span class="mr-2">📞</span> Chat Admin: 0812-3456-7890
+                    </a>
+                    <div class="flex items-center">
+                        <span class="w-2 h-2 bg-careGreen rounded-full mr-2 animate-pulse"></span>
+                        Sekolah Buka (Tutup 14:00)
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <nav class="flex space-x-4 border-r border-white/20 pr-4">
+                        <a href="#" class="hover:underline transition-all">Portal Guru</a>
+                        <a href="#" class="hover:underline transition-all">Portal Orang Tua</a>
+                    </nav>
+                    <div class="flex items-center space-x-3 text-lg">
+                        <a href="#" class="hover:scale-110 transition-transform duration-300">📸</a>
+                        <a href="#" class="hover:scale-110 transition-transform duration-300">📺</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="bg-white border-b border-gray-100">
+            <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+                <a href="index.html" class="flex items-center group">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-eduBlue-main to-eduBlue-light rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                        <span class="text-white font-bold text-xl">SD</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="font-display font-bold text-eduBlue-main text-xl leading-none">SD NEGERI KOTA 01</h1>
+                        <span class="text-[10px] text-gray-500 font-medium tracking-widest uppercase mt-1">Unggul &
+                            Berkarakter</span>
+                    </div>
+                </a>
+
+                <ul class="hidden lg:flex items-center space-x-8">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="about.html" class="nav-link">Tentang</a></li>
+                    <li><a href="teachers.html" class="nav-link">Guru</a></li>
+                    <li><a href="facilities.html" class="nav-link">Fasilitas</a></li>
+                    <li><a href="news.html" class="nav-link">Berita</a></li>
+                    <li><a href="gallery.html" class="nav-link">Galeri</a></li>
+                    <li><a href="index.html#agenda" class="nav-link">Agenda</a></li>
+                    <li><a href="index.html#kontak" class="nav-link">Kontak</a></li>
+                </ul>
+
+                <div class="flex items-center space-x-4">
+                    <a href="index.html#ppdb"
+                        class="hidden sm:flex items-center bg-gradient-to-r from-sunJoy to-yellow-400 hover:from-yellow-400 hover:to-sunJoy text-softBlack font-bold py-3 px-6 rounded-xl shadow-lg shadow-sunJoy/30 transition-all hover:-translate-y-1 active:scale-95">
+                        Daftar PPDB
+                        <span class="ml-2">→</span>
+                    </a>
+                    <button id="mobileMenuButton"
+                        class="lg:hidden text-eduBlue-main text-3xl hover:scale-110 transition-transform">☰</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="lg:hidden fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300">
+            <div id="mobileMenuPanel"
+                class="fixed right-0 top-0 h-full w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3 class="font-display font-bold text-eduBlue-main text-xl">Menu</h3>
+                        <button id="closeMobileMenu" class="text-gray-500 hover:text-eduBlue-main text-3xl">×</button>
+                    </div>
+                    <nav class="space-y-4">
+                        <a href="index.html" class="mobile-nav-link">Beranda</a>
+                        <a href="about.html" class="mobile-nav-link">Tentang</a>
+                        <a href="teachers.html" class="mobile-nav-link">Guru</a>
+                        <a href="facilities.html" class="mobile-nav-link">Fasilitas</a>
+                        <a href="news.html" class="mobile-nav-link">Berita</a>
+                        <a href="gallery.html" class="mobile-nav-link">Galeri</a>
+                        <a href="index.html#agenda" class="mobile-nav-link">Agenda</a>
+                        <a href="index.html#kontak" class="mobile-nav-link">Kontak</a>
+                        <div class="pt-4 border-t border-gray-200">
+                            <a href="index.html#ppdb"
+                                class="block bg-gradient-to-r from-sunJoy to-yellow-400 text-softBlack font-bold py-3 px-6 rounded-xl text-center shadow-lg">
+                                Daftar PPDB →
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="pt-32 pb-8 bg-gradient-to-r from-eduBlue-main to-eduBlue-light">
+        <div class="container mx-auto px-6">
+            <h1 class="font-display text-4xl font-bold text-white mt-4">Tentang SD Negeri Kota 01</h1>
+            <p class="text-white/90 mt-2">Kenali lebih jauh profil dan komitmen sekolah kami</p>
+        </div>
+    </div>
+
+    <!-- About Hero Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="font-display text-4xl font-bold text-gray-900 mb-6">Sejarah & Profil Sekolah</h2>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        SD Negeri Kota 01 didirikan pada tahun 1998 dengan visi menjadi sekolah dasar unggulan yang
+                        menghasilkan lulusan berkarakter, berprestasi, dan berbudaya lingkungan. Selama lebih dari 25
+                        tahun, kami telah berkomitmen memberikan pendidikan berkualitas dengan fasilitas modern dan
+                        tenaga pendidik profesional.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Sekolah kami telah terakreditasi A dan terus berinovasi dalam pembelajaran untuk mengembangkan
+                        potensi setiap siswa secara optimal. Dengan dukungan orang tua dan komunitas, kami berhasil
+                        menciptakan lingkungan belajar yang positif dan inspiratif.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Hingga saat ini, SD Negeri Kota 01 memiliki lebih dari 450 siswa aktif yang tersebar di 24 kelas,
+                        dengan didukung oleh 35+ guru profesional dan staff yang berdedikasi tinggi.
+                    </p>
+                </div>
+                <div class="relative">
+                    <div
+                        class="absolute -inset-4 bg-gradient-to-r from-eduBlue-main/20 to-sunJoy/20 rounded-3xl blur-2xl">
+                    </div>
+                    <img src="./assets/hero_school_banner_1769477883235.png" alt="Sekolah"
+                        class="relative rounded-3xl shadow-2xl w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visi, Misi, Nilai Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-eduBlue-light/5">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Visi -->
+                <div class="card group hover:shadow-xl transition-all duration-300">
+                    <div class="text-5xl mb-4">🎯</div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Visi</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        Menjadi sekolah dasar unggulan yang menghasilkan lulusan berkarakter, berprestasi, dan berbudaya
+                        lingkungan.
+                    </p>
+                </div>
+
+                <!-- Misi -->
+                <div class="card group hover:shadow-xl transition-all duration-300">
+                    <div class="text-5xl mb-4">🚀</div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Misi</h3>
+                    <ul class="text-gray-600 space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-eduBlue-main mr-3 font-bold">1.</span>
+                            <span>Menyelenggarakan pembelajaran berkualitas dan inovatif</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-eduBlue-main mr-3 font-bold">2.</span>
+                            <span>Membentuk karakter siswa yang berakhlak mulia</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-eduBlue-main mr-3 font-bold">3.</span>
+                            <span>Mengembangkan potensi akademik dan non-akademik</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Nilai Inti -->
+                <div class="card group hover:shadow-xl transition-all duration-300">
+                    <div class="text-5xl mb-4">⭐</div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Nilai Inti</h3>
+                    <div class="space-y-2 text-gray-600">
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 bg-eduBlue-main rounded-full mr-3"></span>
+                            Integritas
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 bg-eduBlue-main rounded-full mr-3"></span>
+                            Inovatif
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 bg-eduBlue-main rounded-full mr-3"></span>
+                            Kolaboratif
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 bg-eduBlue-main rounded-full mr-3"></span>
+                            Peduli Lingkungan
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 bg-eduBlue-main rounded-full mr-3"></span>
+                            Profesional
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Achievements -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-eduBlue-main font-semibold text-sm uppercase tracking-wider">Pencapaian Kami</span>
+                <h2 class="font-display text-4xl font-bold text-gray-900 mt-4 mb-6">Prestasi & Penghargaan</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl">
+                    <div class="text-5xl font-bold text-eduBlue-main mb-2">25+</div>
+                    <p class="text-gray-600 font-semibold">Tahun Berpengalaman</p>
+                </div>
+                <div class="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl">
+                    <div class="text-5xl font-bold text-careGreen mb-2">450+</div>
+                    <p class="text-gray-600 font-semibold">Siswa Aktif</p>
+                </div>
+                <div class="text-center p-6 bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl">
+                    <div class="text-5xl font-bold text-sunJoy mb-2">35+</div>
+                    <p class="text-gray-600 font-semibold">Guru Profesional</p>
+                </div>
+                <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl">
+                    <div class="text-5xl font-bold text-purple-600 mb-2">A</div>
+                    <p class="text-gray-600 font-semibold">Akreditasi Sekolah</p>
+                </div>
+            </div>
+
+            <!-- Awards List -->
+            <div class="mt-16">
+                <h3 class="font-display text-2xl font-bold text-gray-900 mb-8">Penghargaan Terkini</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start p-4 border-l-4 border-eduBlue-main bg-blue-50 rounded-r-lg">
+                        <span class="text-3xl mr-4">🏆</span>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Juara 1 Olimpiade Sains Nasional (2026)</h4>
+                            <p class="text-gray-600 text-sm">Siswa kami meraih medali emas di kategori matematika</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start p-4 border-l-4 border-careGreen bg-green-50 rounded-r-lg">
+                        <span class="text-3xl mr-4">🎖️</span>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Sekolah Sehat Tingkat Nasional (2025)</h4>
+                            <p class="text-gray-600 text-sm">Penghargaan dari Kementerian Kesehatan RI</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start p-4 border-l-4 border-sunJoy bg-yellow-50 rounded-r-lg">
+                        <span class="text-3xl mr-4">📜</span>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Terakreditasi A (2023-2028)</h4>
+                            <p class="text-gray-600 text-sm">Standar kualitas pendidikan nasional tertinggi</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start p-4 border-l-4 border-purple-600 bg-purple-50 rounded-r-lg">
+                        <span class="text-3xl mr-4">♻️</span>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Sekolah Ramah Lingkungan (2024)</h4>
+                            <p class="text-gray-600 text-sm">Program keberlanjutan lingkungan yang konsisten</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-eduBlue-main to-eduBlue-light text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-sunJoy rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h2 class="font-display text-4xl font-bold mb-6">Tertarik Bergabung?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+                Bergabunglah dengan ribuan siswa yang telah merasakan pendidikan berkualitas di SD Negeri Kota 01.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="index.html#ppdb"
+                    class="bg-sunJoy hover:bg-yellow-400 text-softBlack font-bold py-4 px-8 rounded-xl shadow-lg transition-all hover:-translate-y-1 active:scale-95">
+                    Daftar PPDB 2026/2027
+                    <span class="ml-2">→</span>
+                </a>
+                <a href="index.html#kontak"
+                    class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-xl transition-all hover:-translate-y-1 active:scale-95 border-2 border-white/50">
+                    Hubungi Kami
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- School Info -->
+                <div class="col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-eduBlue-main to-eduBlue-light rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-xl">SD</span>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-white text-xl">SD NEGERI KOTA 01</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Unggul & Berkarakter</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4 max-w-md">
+                        Memberikan pendidikan berkualitas dengan fasilitas modern dan tenaga pendidik profesional sejak
+                        1998.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 hover:bg-eduBlue-main rounded-full flex items-center justify-center transition-colors">
+                            📸
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 hover:bg-eduBlue-main rounded-full flex items-center justify-center transition-colors">
+                            📘
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 hover:bg-eduBlue-main rounded-full flex items-center justify-center transition-colors">
+                            📺
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-display font-bold text-white mb-4">Link Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-sunJoy transition-colors">Tentang Kami</a></li>
+                        <li><a href="teachers.html" class="hover:text-sunJoy transition-colors">Guru & Staff</a></li>
+                        <li><a href="facilities.html" class="hover:text-sunJoy transition-colors">Fasilitas</a></li>
+                        <li><a href="news.html" class="hover:text-sunJoy transition-colors">Berita</a></li>
+                        <li><a href="gallery.html" class="hover:text-sunJoy transition-colors">Galeri</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-display font-bold text-white mb-4">Kontak</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <span class="mr-2">📍</span>
+                            <span>Jl. Pendidikan No. 123, Jakarta Pusat 10110</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="mr-2">📞</span>
+                            <span>(021) 1234-5678</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="mr-2">📱</span>
+                            <span>0812-3456-7890</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="mr-2">✉️</span>
+                            <span>info@sdnegerikota01.sch.id</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p class="text-gray-400">
+                    © 2026 SD Negeri Kota 01. All rights reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="privacy-policy.html" class="hover:text-sunJoy transition-colors">Privacy Policy</a>
+                    <a href="terms-and-conditions.html" class="hover:text-sunJoy transition-colors">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop"
+        class="fixed bottom-8 right-8 w-12 h-12 bg-eduBlue-main hover:bg-eduBlue-dark text-white rounded-full shadow-lg flex items-center justify-center transition-all opacity-0 pointer-events-none z-40">
+        ↑
+    </button>
+
+    <script>
+        // ===== Mobile Menu =====
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+            mobileMenuPanel.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenuFunc() {
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+            mobileMenuPanel.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) closeMobileMenuFunc();
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                setTimeout(closeMobileMenuFunc, 300);
+            });
+        });
+
+        // ===== Back to Top Button =====
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== Header Hide on Scroll =====
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+
+            if (currentScroll <= 50) {
+                header.style.transform = 'translateY(0)';
+            } else if (currentScroll > lastScroll && currentScroll > 200) {
+                header.style.transform = 'translateY(-100%)';
+            } else if (currentScroll < lastScroll) {
+                header.style.transform = 'translateY(0)';
+            }
+
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+
+</html>

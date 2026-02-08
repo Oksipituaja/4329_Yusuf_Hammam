@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Kebijakan Privasi SD Negeri Kota 01 - Perlindungan Data Pribadi">
+    <link href="./input.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <title>Kebijakan Privasi - SD Negeri Kota 01</title>
+</head>
+
+<body class="font-body antialiased">
+    <!-- Header -->
+    <header class="w-full fixed top-0 z-50 shadow-lg transition-transform duration-300">
+        <!-- Top Bar -->
+        <div class="bg-eduBlue-main text-white py-2 hidden md:block">
+            <div class="container mx-auto px-6 flex justify-between items-center text-xs font-medium">
+                <div class="flex items-center space-x-6">
+                    <a href="https://wa.me/628123456789"
+                        class="flex items-center hover:text-sunJoy transition-colors duration-300">
+                        <span class="mr-2">📞</span> Chat Admin: 0812-3456-7890
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="bg-white border-b border-gray-100">
+            <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+                <a href="index.html" class="flex items-center group">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-eduBlue-main to-eduBlue-light rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                        <span class="text-white font-bold text-xl">SD</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="font-display font-bold text-eduBlue-main text-xl leading-none">SD NEGERI KOTA 01</h1>
+                        <span class="text-[10px] text-gray-500 font-medium tracking-widest uppercase mt-1">Unggul &
+                            Berkarakter</span>
+                    </div>
+                </a>
+
+                <ul class="hidden lg:flex items-center space-x-8">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="about.html" class="nav-link">Tentang</a></li>
+                    <li><a href="teachers.html" class="nav-link">Guru</a></li>
+                    <li><a href="facilities.html" class="nav-link">Fasilitas</a></li>
+                    <li><a href="news.html" class="nav-link">Berita</a></li>
+                    <li><a href="gallery.html" class="nav-link">Galeri</a></li>
+                    <li><a href="index.html#agenda" class="nav-link">Agenda</a></li>
+                    <li><a href="index.html#kontak" class="nav-link">Kontak</a></li>
+                </ul>
+
+                <div class="flex items-center space-x-4">
+                    <a href="ppdb.html"
+                        class="hidden sm:flex items-center bg-gradient-to-r from-sunJoy to-yellow-400 hover:from-yellow-400 hover:to-sunJoy text-softBlack font-bold py-3 px-6 rounded-xl shadow-lg shadow-sunJoy/30 transition-all hover:-translate-y-1 active:scale-95">
+                        Daftar PPDB
+                        <span class="ml-2">→</span>
+                    </a>
+                    <button id="mobileMenuButton"
+                        class="lg:hidden text-eduBlue-main text-3xl hover:scale-110 transition-transform">☰</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="lg:hidden fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300">
+            <div id="mobileMenuPanel"
+                class="fixed right-0 top-0 h-full w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3 class="font-display font-bold text-eduBlue-main text-xl">Menu</h3>
+                        <button id="closeMobileMenu" class="text-gray-500 hover:text-eduBlue-main text-3xl">×</button>
+                    </div>
+                    <nav class="space-y-4">
+                        <a href="index.html" class="mobile-nav-link">Beranda</a>
+                        <a href="about.html" class="mobile-nav-link">Tentang</a>
+                        <a href="teachers.html" class="mobile-nav-link">Guru</a>
+                        <a href="facilities.html" class="mobile-nav-link">Fasilitas</a>
+                        <a href="news.html" class="mobile-nav-link">Berita</a>
+                        <a href="gallery.html" class="mobile-nav-link">Galeri</a>
+                        <a href="index.html#agenda" class="mobile-nav-link">Agenda</a>
+                        <a href="index.html#kontak" class="mobile-nav-link">Kontak</a>
+                        <div class="pt-4 border-t border-gray-200">
+                            <a href="ppdb.html"
+                                class="block bg-gradient-to-r from-sunJoy to-yellow-400 text-softBlack font-bold py-3 px-6 rounded-xl text-center shadow-lg">
+                                Daftar PPDB →
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="pt-32 pb-8 bg-gradient-to-r from-eduBlue-main to-eduBlue-light">
+        <div class="container mx-auto px-6">
+            <nav class="flex items-center space-x-2 text-white text-sm">
+                <a href="index.html" class="hover:underline">Home</a>
+                <span>/</span>
+                <span>Kebijakan Privasi</span>
+            </nav>
+            <h1 class="font-display text-4xl font-bold text-white mt-4">Kebijakan Privasi</h1>
+            <p class="text-white/90 mt-2">Perlindungan Data Pribadi Anda</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="bg-blue-50 border-l-4 border-eduBlue-main p-6 rounded-r-lg mb-8">
+                <p class="text-gray-700">
+                    <strong>Terakhir Diperbarui:</strong> 1 Januari 2026
+                </p>
+                <p class="text-gray-600 text-sm mt-2">
+                    Kebijakan Privasi ini menjelaskan bagaimana SD Negeri Kota 01 mengumpulkan, menggunakan, dan melindungi data pribadi Anda.
+                </p>
+            </div>
+
+            <!-- 1. Pengantar -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">1. Pengantar</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    SD Negeri Kota 01 ("Sekolah", "kami", "kami") berkomitmen untuk melindungi privasi Anda. Kebijakan Privasi ini menjelaskan:
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-gray-600">
+                    <li>Informasi apa yang kami kumpulkan dari Anda</li>
+                    <li>Bagaimana kami menggunakan informasi tersebut</li>
+                    <li>Dengan siapa kami membagikan informasi Anda</li>
+                    <li>Hak-hak Anda terkait privasi data</li>
+                    <li>Bagaimana kami melindungi data pribadi Anda</li>
+                </ul>
+            </div>
+
+            <!-- 2. Data yang Kami Kumpulkan -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">2. Informasi yang Kami Kumpulkan</h2>
+                
+                <div class="space-y-6">
+                    <div class="card">
+                        <h3 class="font-bold text-gray-900 mb-2">📝 Data Pendaftaran & Administratif</h3>
+                        <p class="text-gray-600 text-sm mb-3">
+                            Ketika Anda mendaftar atau menghubungi sekolah, kami mengumpulkan:
+                        </p>
+                        <ul class="list-disc list-inside space-y-1 text-gray-600 text-sm">
+                            <li>Nama lengkap siswa dan orang tua/wali</li>
+                            <li>Tanggal dan tempat lahir</li>
+                            <li>Jenis kelamin dan agama</li>
+                            <li>Nomor telepon dan alamat email</li>
+                            <li>Alamat tempat tinggal</li>
+                            <li>Informasi nomor identitas (NIK, KK)</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="font-bold text-gray-900 mb-2">🏫 Data Akademik</h3>
+                        <p class="text-gray-600 text-sm mb-3">
+                            Data yang dikumpulkan selama proses pendidikan:
+                        </p>
+                        <ul class="list-disc list-inside space-y-1 text-gray-600 text-sm">
+                            <li>Nilai dan prestasi akademik</li>
+                            <li>Kehadiran dan keterlambatan</li>
+                            <li>Partisipasi dalam kegiatan ekstrakurikuler</li>
+                            <li>Laporan perilaku dan catatan disiplin</li>
+                            <li>Hasil penilaian kesehatan dan tes kesehatan</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="font-bold text-gray-900 mb-2">📱 Data Penggunaan Website</h3>
+                        <p class="text-gray-600 text-sm mb-3">
+                            Informasi teknis yang dikumpulkan secara otomatis:
+                        </p>
+                        <ul class="list-disc list-inside space-y-1 text-gray-600 text-sm">
+                            <li>Alamat IP (Internet Protocol)</li>
+                            <li>Jenis browser dan sistem operasi yang digunakan</li>
+                            <li>Halaman yang dikunjungi dan waktu kunjungan</li>
+                            <li>Sumber referral (dari mana Anda sampai ke website kami)</li>
+                            <li>Informasi cookies dan teknologi pelacakan serupa</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="font-bold text-gray-900 mb-2">🖼️ Data Foto & Dokumen</h3>
+                        <p class="text-gray-600 text-sm mb-3">
+                            Konten visual dan dokumen pendukung:
+                        </p>
+                        <ul class="list-disc list-inside space-y-1 text-gray-600 text-sm">
+                            <li>Foto profil siswa (untuk keperluan administrasi)</li>
+                            <li>Foto kegiatan sekolah (untuk dokumentasi dan publikasi)</li>
+                            <li>Fotokopi dokumen identitas dan akte kelahiran</li>
+                            <li>Surat keterangan kesehatan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Penggunaan Data -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">3. Bagaimana Kami Menggunakan Data Anda</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Kami menggunakan informasi yang dikumpulkan untuk tujuan-tujuan berikut:
+                </p>
+                
+                <div class="space-y-3">
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-4">✓</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Proses Pendaftaran & Penerimaan</p>
+                            <p class="text-sm text-gray-600">Memproses aplikasi PPDB dan verifikasi kelengkapan dokumen</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-4">✓</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Administrasi Sekolah</p>
+                            <p class="text-sm text-gray-600">Pemeliharaan data siswa, pembuatan ijazah, dan laporan resmi</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-4">✓</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Komunikasi</p>
+                            <p class="text-sm text-gray-600">Menghubungi Anda tentang pengumuman sekolah dan acara penting</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-4">✓</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Keselamatan & Kesehatan</p>
+                            <p class="text-sm text-gray-600">Memastikan kesehatan dan keselamatan siswa di lingkungan sekolah</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-4">✓</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Peningkatan Layanan</p>
+                            <p class="text-sm text-gray-600">Menganalisis dan meningkatkan kualitas website dan layanan kami</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-4">✓</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Kepatuhan Hukum</p>
+                            <p class="text-sm text-gray-600">Memenuhi kewajiban hukum dan peraturan yang berlaku</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Pembagian Data -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">4. Berbagi Data dengan Pihak Ketiga</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Kami dapat membagikan data pribadi Anda dengan pihak-pihak berikut:
+                </p>
+                
+                <div class="space-y-4">
+                    <div class="card border-l-4 border-eduBlue-main">
+                        <p class="font-semibold text-gray-900">Pemerintah & Instansi Pendidikan</p>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Dinas Pendidikan, Kementerian Pendidikan, dan lembaga pemerintah lainnya sesuai dengan ketentuan peraturan perundang-undangan.
+                        </p>
+                    </div>
+
+                    <div class="card border-l-4 border-careGreen">
+                        <p class="font-semibold text-gray-900">Penyedia Layanan</p>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Penyedia layanan yang membantu kami menjalankan operasional sekolah, seperti sistem manajemen siswa dan penyedia email.
+                        </p>
+                    </div>
+
+                    <div class="card border-l-4 border-sunJoy">
+                        <p class="font-semibold text-gray-900">Kepatuhan Hukum</p>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Ketika diperlukan oleh hukum atau untuk melindungi hak, privasi, keamanan kami atau publik.
+                        </p>
+                    </div>
+
+                    <div class="card border-l-4 border-purple-500">
+                        <p class="font-semibold text-gray-900">Pihak Lainnya dengan Persetujuan</p>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Kami hanya akan membagikan data kepada pihak lain dengan persetujuan eksplisit dari Anda.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Keamanan Data -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">5. Keamanan Data</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Kami melakukan langkah-langkah keamanan yang tepat untuk melindungi data pribadi Anda dari akses, pengubahan, pengungkapan, atau penghancuran yang tidak sah, termasuk:
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="card">
+                        <h4 class="font-semibold text-gray-900 mb-2">🔒 Enkripsi Data</h4>
+                        <p class="text-sm text-gray-600">Data sensitif dienkripsi saat transmisi dan penyimpanan menggunakan protokol HTTPS.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="font-semibold text-gray-900 mb-2">🔐 Kontrol Akses</h4>
+                        <p class="text-sm text-gray-600">Hanya staf yang berwenang yang dapat mengakses data pribadi siswa.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="font-semibold text-gray-900 mb-2">📋 Audit Keamanan</h4>
+                        <p class="text-sm text-gray-600">Kami melakukan audit dan pemantauan keamanan secara berkala.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="font-semibold text-gray-900 mb-2">🚨 Protokol Insiden</h4>
+                        <p class="text-sm text-gray-600">Memiliki prosedur untuk merespons pelanggaran keamanan data.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Hak-hak Anda -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">6. Hak-hak Anda</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Anda memiliki hak-hak berikut terkait data pribadi Anda:
+                </p>
+                
+                <div class="space-y-3">
+                    <div class="flex items-start">
+                        <span class="bg-eduBlue-main text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 text-sm font-bold">1</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Hak Akses</p>
+                            <p class="text-sm text-gray-600">Anda berhak mengakses data pribadi kami yang kami simpan tentang Anda.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="bg-eduBlue-main text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 text-sm font-bold">2</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Hak Koreksi</p>
+                            <p class="text-sm text-gray-600">Anda berhak untuk meminta koreksi data pribadi yang tidak akurat atau lengkap.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="bg-eduBlue-main text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 text-sm font-bold">3</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Hak Penghapusan</p>
+                            <p class="text-sm text-gray-600">Dalam kondisi tertentu, Anda berhak meminta penghapusan data pribadi Anda.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="bg-eduBlue-main text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 text-sm font-bold">4</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Hak Pembatasan Pemrosesan</p>
+                            <p class="text-sm text-gray-600">Anda berhak meminta kami membatasi pemrosesan data pribadi Anda dalam kondisi tertentu.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Penyimpanan Data -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">7. Durasi Penyimpanan Data</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Kami menyimpan data pribadi Anda selama diperlukan untuk:
+                </p>
+                
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-6">
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-careGreen mr-3 font-bold">•</span>
+                            <span class="text-gray-600">Menjalankan tujuan pendidikan dan administratif sekolah</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-careGreen mr-3 font-bold">•</span>
+                            <span class="text-gray-600">Memenuhi kewajiban hukum dan peraturan yang berlaku</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-careGreen mr-3 font-bold">•</span>
+                            <span class="text-gray-600">Keperluan akuntansi, audit, dan kepatuhan sekolah</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-careGreen mr-3 font-bold">•</span>
+                            <span class="text-gray-600">Menjalankan atau mempertahankan hak dan kewajiban hukum kami</span>
+                        </li>
+                    </ul>
+                    <p class="text-sm text-gray-600 mt-4 italic">
+                        Setelah periode tersebut, kami akan menghapus atau menganonimkan data Anda, kecuali disyaratkan oleh hukum untuk tetap menyimpannya.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 8. Cookies -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">8. Cookies & Teknologi Pelacakan</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Website kami menggunakan cookies dan teknologi pelacakan serupa untuk:
+                </p>
+                
+                <div class="space-y-3">
+                    <div class="flex items-start">
+                        <span class="mr-3">🍪</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Mengingat Preferensi Anda</p>
+                            <p class="text-sm text-gray-600">Cookies membantu kami mengingat pilihan bahasa dan pengaturan lainnya.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="mr-3">📊</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Analitik Website</p>
+                            <p class="text-sm text-gray-600">Kami menggunakan analytics untuk memahami bagaimana pengunjung menggunakan website kami.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="mr-3">🔧</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Fungsionalitas Website</p>
+                            <p class="text-sm text-gray-600">Cookies membantu website berfungsi dengan baik dan memberikan pengalaman yang lebih baik.</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-600 text-sm mt-6">
+                    Anda dapat mengontrol cookies melalui pengaturan browser Anda. Namun, menonaktifkan cookies dapat mempengaruhi fungsi website.
+                </p>
+            </div>
+
+            <!-- 9. Kontrak Kami -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">9. Hubungi Kami</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini atau ingin menggunakan hak-hak privasi Anda, silakan hubungi kami:
+                </p>
+                
+                <div class="bg-gradient-to-r from-eduBlue-main to-eduBlue-light text-white rounded-lg p-8">
+                    <h4 class="font-bold text-xl mb-4">SD Negeri Kota 01</h4>
+                    <div class="space-y-3">
+                        <p>📍 Jalan Pendidikan No. 1, Kota, Provinsi</p>
+                        <p>📞 Telepon: (021) 1234-5678</p>
+                        <p>📱 WhatsApp: 0812-3456-7890</p>
+                        <p>📧 Email: privacy@sdnegerikota01.sch.id</p>
+                        <p>🌐 Website: <a href="index.html" class="underline hover:text-sunJoy">sdnegerikota01.sch.id</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. Perubahan Kebijakan -->
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">10. Perubahan Kebijakan Privasi</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu untuk mencerminkan perubahan praktik, teknologi, peraturan hukum, atau alasan lainnya. Kami akan memberitahu Anda tentang perubahan material dengan memposting Kebijakan Privasi baru di website kami dan memperbarui tanggal "Terakhir Diperbarui" di atas. Penggunaan website kami yang berkelanjutan setelah perubahan tersebut berarti Anda menerima Kebijakan Privasi yang diperbarui.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-careGreen/10 to-sunJoy/10">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Percayakan Pendidikan Anak Anda pada Kami</h3>
+            <p class="text-gray-600 mb-8">Kami berkomitmen menjaga privasi dan keamanan data pribadi Anda dengan sebaik-baiknya.</p>
+            <a href="ppdb.html"
+                class="inline-flex items-center bg-gradient-to-r from-sunJoy to-yellow-400 hover:from-yellow-400 hover:to-sunJoy text-softBlack font-bold py-4 px-8 rounded-xl shadow-lg transition-all hover:-translate-y-1 active:scale-95">
+                Daftar PPDB Sekarang
+                <span class="ml-2">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-eduBlue-main to-eduBlue-light rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-xl">SD</span>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-white text-xl">SD NEGERI KOTA 01</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Unggul & Berkarakter</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-bold text-white mb-4">Link Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-sunJoy transition-colors">Tentang</a></li>
+                        <li><a href="ppdb.html" class="hover:text-sunJoy transition-colors">PPDB</a></li>
+                        <li><a href="facilities.html" class="hover:text-sunJoy transition-colors">Fasilitas</a></li>
+                        <li><a href="gallery.html" class="hover:text-sunJoy transition-colors">Galeri</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-bold text-white mb-4">Kontak</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>📞 (021) 1234-5678</li>
+                        <li>📱 0812-3456-7890</li>
+                        <li>📧 info@sdnegerikota01.sch.id</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p class="text-gray-400">© 2026 SD Negeri Kota 01. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="privacy-policy.html" class="hover:text-sunJoy transition-colors">Privacy Policy</a>
+                    <a href="terms-and-conditions.html" class="hover:text-sunJoy transition-colors">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop"
+        class="fixed bottom-8 right-8 w-12 h-12 bg-eduBlue-main hover:bg-eduBlue-dark text-white rounded-full shadow-lg flex items-center justify-center transition-all opacity-0 pointer-events-none z-40">
+        ↑
+    </button>
+
+    <script>
+        // Mobile Menu
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+            mobileMenuPanel.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+            mobileMenuPanel.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        });
+
+        // Back to Top
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>

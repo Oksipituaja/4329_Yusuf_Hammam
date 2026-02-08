@@ -1,0 +1,2360 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin Dashboard - Professional School Management System">
+    <link href="./input.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+    <title>Admin Dashboard - Professional Management</title>
+    <style>
+        :root {
+            --primary: #1E40AF;
+            --primary-light: #3B82F6;
+            --primary-dark: #1e3a8a;
+            --secondary: #10B981;
+            --accent: #FCD34D;
+            --danger: #EF4444;
+            --warning: #F97316;
+            --info: #06B6D4;
+            --success: #10B981;
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --border-color: #475569;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-secondary);
+        }
+
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            min-height: 100vh;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            color: white;
+            padding: 16px 8px;
+            position: fixed;
+            height: 100vh;
+            width: 70px;
+            overflow-y: auto;
+            box-shadow: 4px 0 20px rgba(0, 0, 0, 0.5);
+            border-right: 1px solid var(--border-color);
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            transition: left 0.3s ease;
+        }
+
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            gap: 8px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sidebar-logo .logo-circle {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+        }
+
+        .sidebar-logo h3 {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            display: none;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 4px;
+        }
+
+        .sidebar-menu button {
+            width: 100%;
+            background: none;
+            border: none;
+            color: transparent;
+            padding: 12px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 0;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            position: relative;
+            overflow: hidden;
+            margin: 0 4px;
+            min-height: 48px;
+            white-space: nowrap;
+            line-height: 0;
+            letter-spacing: 0;
+        }
+
+        .sidebar-menu button::before {
+            content: attr(data-icon);
+            color: var(--text-secondary);
+            font-size: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .sidebar-menu button:hover {
+            background: rgba(59, 130, 246, 0.1);
+            transform: scale(1.1);
+        }
+
+        .sidebar-menu button.active {
+            background: rgba(59, 130, 246, 0.15);
+            font-weight: 600;
+        }
+
+        .sidebar-menu button.active::before {
+            color: var(--primary-light);
+        }
+        
+        .sidebar-menu button span {
+            color: transparent;
+            font-size: 0;
+        }
+        
+        .sidebar-menu button:hover::before {
+            color: var(--text-primary);
+        }
+
+        .sidebar-logout {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .sidebar-logout button {
+            color: var(--danger);
+        }
+
+        .sidebar-logout button:hover {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ff6b6b;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .main-content {
+            margin-left: 70px;
+            padding: 24px;
+            background: var(--bg-primary);
+            overflow-x: hidden;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+            max-width: 100%;
+            width: calc(100% - 70px);
+            box-sizing: border-box;
+        }
+
+        /* ===== TOP BAR ===== */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            gap: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .top-bar h1 {
+            font-size: 26px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 12px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .btn-danger {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--danger);
+            border: 1px solid var(--danger);
+        }
+
+        .btn-danger:hover {
+            background: var(--danger);
+            color: white;
+        }
+
+        /* ===== STATS SECTION ===== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(16, 185, 129, 0.15));
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--primary-light);
+            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .stat-card:hover::before {
+            top: -20%;
+            right: -20%;
+        }
+
+        .stat-card.blue {
+            border-top: 3px solid var(--primary-light);
+        }
+
+        .stat-card.green {
+            border-top: 3px solid var(--secondary);
+        }
+
+        .stat-card.yellow {
+            border-top: 3px solid var(--accent);
+        }
+
+        .stat-card.purple {
+            border-top: 3px solid var(--info);
+        }
+
+        .stat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+            gap: 8px;
+        }
+
+        .stat-label {
+            font-size: 10px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .stat-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+            display: block;
+        }
+
+        /* ===== TABLE SECTION ===== */
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 28px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(180deg, var(--primary-light), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .table-container {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            margin-bottom: 24px;
+        }
+
+        .table-container:hover {
+            border-color: var(--primary-light);
+            box-shadow: 0 12px 40px rgba(59, 130, 246, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: linear-gradient(90deg, var(--bg-tertiary), var(--bg-secondary));
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        th {
+            padding: 12px 14px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 11px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid rgba(71, 85, 105, 0.3);
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-success {
+            background: rgba(16, 185, 129, 0.2);
+            color: #4ade80;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .badge-warning {
+            background: rgba(249, 115, 22, 0.2);
+            color: #fb923c;
+            border: 1px solid rgba(249, 115, 22, 0.3);
+        }
+
+        .badge-danger {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ff6b6b;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        /* ===== ACTION BUTTONS ===== */
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .action-buttons button {
+            padding: 6px 12px;
+            font-size: 11px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .edit-btn {
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--primary-light);
+            border: 1px solid var(--primary-light);
+        }
+
+        .edit-btn:hover {
+            background: var(--primary-light);
+            color: white;
+        }
+
+        .delete-btn {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--danger);
+            border: 1px solid var(--danger);
+        }
+
+        .delete-btn:hover {
+            background: var(--danger);
+            color: white;
+        }
+
+        /* ===== FORM ===== */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 11px 14px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            background: var(--bg-secondary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-content {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            max-width: 480px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-xl);
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+        }
+
+        .modal-close:hover {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        .modal-footer {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* ===== CONTENT SECTIONS ===== */
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .section-header h2 {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        /* ===== CARDS GRID ===== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 28px;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .card {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-light), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--primary-light);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.2);
+            transform: translateY(-6px);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            min-height: 32px;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-content {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        /* ===== EMPTY STATE ===== */
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-secondary);
+        }
+
+        .empty-state-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+            opacity: 0.5;
+        }
+
+        .empty-state-text {
+            font-size: 13px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        /* Ultra Wide Desktop (1600px+) */
+        @media (min-width: 1600px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+            }
+
+            .main-content {
+                margin-left: 70px;
+                width: calc(100% - 70px);
+                padding: 28px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 16px;
+            }
+
+            .cards-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 16px;
+            }
+
+            .top-bar {
+                gap: 20px;
+                margin-bottom: 28px;
+            }
+
+            .top-bar h1 {
+                font-size: 28px;
+            }
+
+            .stat-card {
+                padding: 20px;
+            }
+
+            .stat-number {
+                font-size: 32px;
+            }
+
+            .section-title {
+                font-size: 18px;
+                margin-bottom: 18px;
+            }
+
+            .btn {
+                padding: 12px 24px;
+                font-size: 13px;
+            }
+        }
+
+        /* Large Desktop (1201px - 1599px) */
+        @media (min-width: 1201px) and (max-width: 1599px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+            }
+
+            .main-content {
+                margin-left: 70px;
+                width: calc(100% - 70px);
+                padding: 24px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 16px;
+            }
+
+            .cards-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 16px;
+            }
+
+            .top-bar {
+                gap: 16px;
+                margin-bottom: 24px;
+            }
+
+            .top-bar h1 {
+                font-size: 26px;
+            }
+
+            .stat-card {
+                padding: 18px;
+            }
+
+            .stat-number {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 17px;
+                margin-bottom: 16px;
+            }
+
+            .btn {
+                padding: 11px 22px;
+                font-size: 12px;
+            }
+        }
+
+        /* Desktop (1025px - 1200px) */
+        @media (min-width: 1025px) and (max-width: 1200px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+            }
+
+            .main-content {
+                margin-left: 70px;
+                width: calc(100% - 70px);
+                padding: 22px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 14px;
+            }
+
+            .cards-grid {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 14px;
+            }
+
+            .top-bar {
+                gap: 14px;
+                margin-bottom: 22px;
+            }
+
+            .top-bar h1 {
+                font-size: 24px;
+            }
+
+            .stat-card {
+                padding: 16px;
+            }
+
+            .stat-number {
+                font-size: 26px;
+            }
+
+            .section-title {
+                font-size: 15px;
+                margin-bottom: 14px;
+            }
+
+            .btn {
+                padding: 10px 18px;
+                font-size: 12px;
+            }
+        }
+
+        /* Tablet Large (851px - 1024px) */
+        @media (min-width: 851px) and (max-width: 1024px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+            }
+
+            .main-content {
+                margin-left: 70px;
+                width: calc(100% - 70px);
+                padding: 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .top-bar {
+                gap: 12px;
+                margin-bottom: 20px;
+            }
+
+            .top-bar h1 {
+                font-size: 22px;
+            }
+
+            .header-actions {
+                gap: 10px;
+            }
+
+            .stat-card {
+                padding: 15px;
+            }
+
+            .stat-number {
+                font-size: 24px;
+            }
+
+            .stat-label {
+                font-size: 9px;
+            }
+
+            .stat-icon {
+                font-size: 22px;
+            }
+
+            .section-title {
+                font-size: 15px;
+                margin-bottom: 13px;
+            }
+
+            .btn {
+                padding: 10px 16px;
+                font-size: 11px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 10px 12px;
+            }
+        }
+
+        /* Tablet Medium (701px - 850px) */
+        @media (min-width: 701px) and (max-width: 850px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+            }
+
+            .main-content {
+                margin-left: 70px;
+                width: calc(100% - 70px);
+                padding: 18px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .top-bar {
+                gap: 10px;
+                margin-bottom: 18px;
+            }
+
+            .top-bar h1 {
+                font-size: 20px;
+            }
+
+            .header-actions {
+                gap: 8px;
+            }
+
+            .stat-card {
+                padding: 14px;
+            }
+
+            .stat-number {
+                font-size: 22px;
+            }
+
+            .stat-label {
+                font-size: 8px;
+            }
+
+            .stat-icon {
+                font-size: 20px;
+            }
+
+            .section-title {
+                font-size: 14px;
+                margin-bottom: 12px;
+                margin-top: 20px;
+            }
+
+            .btn {
+                padding: 9px 14px;
+                font-size: 11px;
+            }
+
+            table {
+                font-size: 11px;
+            }
+
+            th, td {
+                padding: 9px 11px;
+            }
+        }
+
+        /* Tablet/Mobile Transition (481px - 700px) */
+        @media (max-width: 700px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: fixed;
+                left: -70px;
+                width: 70px;
+                height: 100%;
+                transition: left 0.3s ease;
+                z-index: 1001;
+            }
+
+            .sidebar.active {
+                left: 0;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 16px;
+            }
+
+            .top-bar {
+                flex-direction: column;
+                align-items: stretch;
+                margin-bottom: 16px;
+                gap: 10px;
+            }
+
+            .top-bar h1 {
+                font-size: 18px;
+                margin: 0;
+            }
+
+            .header-actions {
+                width: 100%;
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                margin-bottom: 18px;
+            }
+
+            .stat-card {
+                padding: 12px;
+            }
+
+            .stat-number {
+                font-size: 20px;
+            }
+
+            .stat-label {
+                font-size: 8px;
+            }
+
+            .stat-icon {
+                font-size: 18px;
+            }
+
+            .stat-header {
+                gap: 6px;
+            }
+
+            .section-title {
+                font-size: 14px;
+                margin-bottom: 12px;
+                margin-top: 16px;
+            }
+
+            .btn {
+                padding: 8px 12px;
+                font-size: 10px;
+                gap: 4px;
+            }
+
+            table {
+                font-size: 10px;
+            }
+
+            th, td {
+                padding: 8px 6px;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .table-container {
+                margin-bottom: 18px;
+            }
+        }
+
+        /* Mobile (320px - 480px) */
+        @media (max-width: 480px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+            }
+
+            .main-content {
+                padding: 12px;
+                margin-left: 0;
+            }
+
+            .top-bar {
+                flex-direction: column;
+                align-items: stretch;
+                margin-bottom: 14px;
+                gap: 8px;
+            }
+
+            .top-bar h1 {
+                font-size: 16px;
+                margin: 0;
+            }
+
+            .header-actions {
+                width: 100%;
+                gap: 6px;
+                flex-wrap: wrap;
+            }
+
+            .btn {
+                padding: 8px 10px;
+                font-size: 9px;
+                gap: 3px;
+                flex: 1;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                margin-bottom: 14px;
+            }
+
+            .stat-card {
+                padding: 10px;
+            }
+
+            .stat-header {
+                gap: 4px;
+            }
+
+            .stat-number {
+                font-size: 18px;
+            }
+
+            .stat-label {
+                font-size: 7px;
+            }
+
+            .stat-icon {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 13px;
+                margin-bottom: 10px;
+                margin-top: 12px;
+            }
+
+            table {
+                font-size: 9px;
+            }
+
+            th, td {
+                padding: 6px 4px;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .card {
+                padding: 12px;
+            }
+
+            .modal-content {
+                padding: 14px;
+                max-width: 95vw;
+            }
+
+            .action-buttons {
+                gap: 4px;
+            }
+
+            .action-buttons button {
+                padding: 4px 8px;
+                font-size: 8px;
+            }
+        }
+
+        /* Toggle Sidebar Button - Hide on screens > 700px */
+        @media (min-width: 700px) {
+            #toggleSidebar {
+                display: none !important;
+            }
+        }
+
+        /* Image Crop Modal */
+        #cropModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #cropModal.active {
+            display: flex;
+        }
+
+        #cropContainer {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        #cropImage {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .crop-controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .crop-controls button {
+            flex: 1;
+            min-width: 100px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .crop-controls .btn-primary {
+            background: var(--primary-light);
+            color: white;
+        }
+
+        .crop-controls .btn-primary:hover {
+            background: var(--primary);
+        }
+
+        .crop-controls .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        .crop-controls .btn-secondary:hover {
+            background: var(--border-color);
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-logo">
+                <div class="logo-circle">SD</div>
+                <h3>Admin</h3>
+            </div>
+
+            <ul class="sidebar-menu">
+                <li><button class="menu-btn active" data-section="dashboard" data-icon="📊">📊 Dashboard</button></li>
+                <li><button class="menu-btn" data-section="berita" data-icon="📰">📰 Berita</button></li>
+                <li><button class="menu-btn" data-section="guru" data-icon="👨‍🏫">👨‍🏫 Guru</button></li>
+                <li><button class="menu-btn" data-section="fasilitas" data-icon="🏫">🏫 Fasilitas</button></li>
+                <li><button class="menu-btn" data-section="galeri" data-icon="🖼️">🖼️ Galeri</button></li>
+                <li><button class="menu-btn" data-section="ppdb" data-icon="📋">📋 PPDB</button></li>
+                <li><button class="menu-btn" data-section="agenda" data-icon="📅">📅 Agenda</button></li>
+                <li><button class="menu-btn" data-section="settings" data-icon="⚙️">⚙️ Settings</button></li>
+            </ul>
+
+            <div class="sidebar-logout">
+                <button class="menu-btn" id="logoutBtn" data-icon="🚪">🚪 Logout</button>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <div class="top-bar">
+                <h1>Dashboard</h1>
+                <div class="header-actions">
+                    <button class="btn btn-secondary" id="toggleSidebar">☰ Menu</button>
+                    <button class="btn btn-secondary" id="backBtn">← Website</button>
+                </div>
+            </div>
+
+            <!-- DASHBOARD SECTION -->
+            <section class="content-section active" id="dashboard">
+                <div class="stats-grid">
+                    <div class="stat-card blue">
+                        <div class="stat-header">
+                            <div>
+                                <div class="stat-label">Pendaftar PPDB</div>
+                                <div class="stat-number" id="totalPPDB">0</div>
+                            </div>
+                            <div class="stat-icon">📋</div>
+                        </div>
+                    </div>
+                    <div class="stat-card green">
+                        <div class="stat-header">
+                            <div>
+                                <div class="stat-label">Total Berita</div>
+                                <div class="stat-number" id="totalNews">0</div>
+                            </div>
+                            <div class="stat-icon">📰</div>
+                        </div>
+                    </div>
+                    <div class="stat-card yellow">
+                        <div class="stat-header">
+                            <div>
+                                <div class="stat-label">Total Guru</div>
+                                <div class="stat-number" id="totalTeachers">0</div>
+                            </div>
+                            <div class="stat-icon">👨‍🏫</div>
+                        </div>
+                    </div>
+                    <div class="stat-card purple">
+                        <div class="stat-header">
+                            <div>
+                                <div class="stat-label">Total Fasilitas</div>
+                                <div class="stat-number" id="totalFacilities">0</div>
+                            </div>
+                            <div class="stat-icon">🏫</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-title">📊 Aktivitas Terbaru</div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipe</th>
+                                <th>Deskripsi</th>
+                                <th>Waktu</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="activityLog">
+                            <tr>
+                                <td colspan="4" style="text-align: center; padding: 40px;">
+                                    <div class="empty-state">
+                                        <div class="empty-state-icon">📭</div>
+                                        <div class="empty-state-text">Tidak ada aktivitas</div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- BERITA SECTION -->
+            <section class="content-section" id="berita">
+                <div class="section-header">
+                    <div class="section-title">📰 Kelola Berita</div>
+                    <button class="btn btn-primary" id="addNewsBtn">+ Tambah</button>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Judul</th>
+                                <th>Tanggal</th>
+                                <th>Kategori</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="newsTable">
+                            <tr>
+                                <td colspan="5" style="text-align: center; padding: 40px;">
+                                    <div class="empty-state">
+                                        <div class="empty-state-icon">📄</div>
+                                        <div class="empty-state-text">Belum ada berita</div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- GURU SECTION -->
+            <section class="content-section" id="guru">
+                <div class="section-header">
+                    <div class="section-title">👨‍🏫 Kelola Guru</div>
+                    <button class="btn btn-primary" id="addTeacherBtn">+ Tambah</button>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nama</th>
+                                <th>Mata Pelajaran</th>
+                                <th>Email</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="teacherTable">
+                            <tr>
+                                <td colspan="5" style="text-align: center; padding: 40px;">
+                                    <div class="empty-state">
+                                        <div class="empty-state-icon">👤</div>
+                                        <div class="empty-state-text">Belum ada guru</div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- FASILITAS SECTION -->
+            <section class="content-section" id="fasilitas">
+                <div class="section-header">
+                    <div class="section-title">🏫 Kelola Fasilitas</div>
+                    <button class="btn btn-primary" id="addFacilityBtn">+ Tambah</button>
+                </div>
+
+                <div class="cards-grid" id="facilityGrid">
+                    <div class="empty-state" style="grid-column: 1/-1;">
+                        <div class="empty-state-icon">🏢</div>
+                        <div class="empty-state-text">Belum ada fasilitas</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GALERI SECTION -->
+            <section class="content-section" id="galeri">
+                <div class="section-header">
+                    <div class="section-title">🖼️ Kelola Galeri</div>
+                    <button class="btn btn-primary" id="addGalleryBtn">+ Tambah</button>
+                </div>
+
+                <div class="cards-grid" id="galleryGrid">
+                    <div class="empty-state" style="grid-column: 1/-1;">
+                        <div class="empty-state-icon">📸</div>
+                        <div class="empty-state-text">Belum ada galeri</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PPDB SECTION -->
+            <section class="content-section" id="ppdb">
+                <div class="section-title">📋 Data Pendaftar PPDB</div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nama Siswa</th>
+                                <th>Nama Orang Tua</th>
+                                <th>Telepon</th>
+                                <th>Tanggal Daftar</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ppdbTable">
+                            <tr>
+                                <td colspan="6" style="text-align: center; padding: 40px;">
+                                    <div class="empty-state">
+                                        <div class="empty-state-icon">📝</div>
+                                        <div class="empty-state-text">Belum ada pendaftar</div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- AGENDA SECTION -->
+            <section class="content-section" id="agenda">
+                <div class="section-header">
+                    <div class="section-title">📅 Kelola Agenda</div>
+                    <button class="btn btn-primary" id="addAgendaBtn">+ Tambah</button>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Acara</th>
+                                <th>Tanggal</th>
+                                <th>Waktu</th>
+                                <th>Lokasi</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="agendaTable">
+                            <tr>
+                                <td colspan="5" style="text-align: center; padding: 40px;">
+                                    <div class="empty-state">
+                                        <div class="empty-state-icon">📆</div>
+                                        <div class="empty-state-text">Belum ada agenda</div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SETTINGS SECTION -->
+            <section class="content-section" id="settings">
+                <div class="section-title">⚙️ Pengaturan</div>
+
+                <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; max-width: 600px;">
+                    <form id="settingsForm">
+                        <div class="form-group">
+                            <label>Nama Sekolah</label>
+                            <input type="text" id="schoolName">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="schoolEmail">
+                        </div>
+                        <div class="form-group">
+                            <label>Telepon</label>
+                            <input type="tel" id="schoolPhone">
+                        </div>
+                        <div class="form-group">
+                            <label>WhatsApp</label>
+                            <input type="tel" id="schoolWhatsapp">
+                        </div>
+                        <div class="form-group">
+                            <label>Alamat</label>
+                            <textarea id="schoolAddress"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Motto Sekolah</label>
+                            <input type="text" id="schoolMotto">
+                        </div>
+                        <button type="submit" class="btn btn-primary">💾 Simpan</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- MODALS -->
+    <div class="modal" id="newsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>Tambah Berita</span>
+                <button class="modal-close" onclick="closeModal('newsModal')">×</button>
+            </div>
+            <form id="newsForm">
+                <div class="form-group">
+                    <label>Judul</label>
+                    <input type="text" id="newsTitle" required>
+                </div>
+                <div class="form-group">
+                    <label>Kategori</label>
+                    <select id="newsCategory" required>
+                        <option>Pengumuman</option>
+                        <option>Akademik</option>
+                        <option>Kegiatan</option>
+                        <option>Prestasi</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Konten</label>
+                    <textarea id="newsContent" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Gambar (URL atau Upload)</label>
+                    <input type="text" id="newsImage" placeholder="Masukkan URL gambar atau pilih file">
+                </div>
+                <div class="form-group">
+                    <label>Atau Pilih File Gambar</label>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="file" id="newsImageFile" accept="image/*" style="flex: 1;">
+                        <button type="button" class="btn btn-secondary" onclick="openCropModal('newsImageFile')" style="flex: 0 0 auto; padding: 0 15px;">✂️ Crop</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('newsModal')">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="teacherModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>Tambah Guru</span>
+                <button class="modal-close" onclick="closeModal('teacherModal')">×</button>
+            </div>
+            <form id="teacherForm">
+                <div class="form-group">
+                    <label>Nama Guru</label>
+                    <input type="text" id="teacherName" required>
+                </div>
+                <div class="form-group">
+                    <label>Mata Pelajaran</label>
+                    <input type="text" id="teacherSubject" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="teacherEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Pendidikan</label>
+                    <input type="text" id="teacherEducation">
+                </div>
+                <div class="form-group">
+                    <label>Foto Guru (URL atau Upload)</label>
+                    <input type="text" id="teacherImage" placeholder="Masukkan URL foto atau pilih file">
+                </div>
+                <div class="form-group">
+                    <label>Atau Pilih File Gambar</label>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="file" id="teacherImageFile" accept="image/*" style="flex: 1;">
+                        <button type="button" class="btn btn-secondary" onclick="openCropModal('teacherImageFile')" style="flex: 0 0 auto; padding: 0 15px;">✂️ Crop</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('teacherModal')">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="facilityModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>Tambah Fasilitas</span>
+                <button class="modal-close" onclick="closeModal('facilityModal')">×</button>
+            </div>
+            <form id="facilityForm">
+                <div class="form-group">
+                    <label>Nama Fasilitas</label>
+                    <input type="text" id="facilityName" required>
+                </div>
+                <div class="form-group">
+                    <label>Deskripsi</label>
+                    <textarea id="facilityDesc" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Fitur</label>
+                    <textarea id="facilityFeatures"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Gambar Fasilitas (URL atau Upload)</label>
+                    <input type="text" id="facilityImage" placeholder="Masukkan URL gambar atau pilih file">
+                </div>
+                <div class="form-group">
+                    <label>Atau Pilih File Gambar</label>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="file" id="facilityImageFile" accept="image/*" style="flex: 1;">
+                        <button type="button" class="btn btn-secondary" onclick="openCropModal('facilityImageFile')" style="flex: 0 0 auto; padding: 0 15px;">✂️ Crop</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('facilityModal')">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="galleryModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>Tambah Galeri</span>
+                <button class="modal-close" onclick="closeModal('galleryModal')">×</button>
+            </div>
+            <form id="galleryForm">
+                <div class="form-group">
+                    <label>Judul Foto</label>
+                    <input type="text" id="galleryTitle" required>
+                </div>
+                <div class="form-group">
+                    <label>Kategori</label>
+                    <select id="galleryCategory" required>
+                        <option>Akademik</option>
+                        <option>Ekstrakurikuler</option>
+                        <option>Acara</option>
+                        <option>Fasilitas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>URL Gambar</label>
+                    <input type="url" id="galleryImage" placeholder="Masukkan URL gambar atau pilih file">
+                </div>
+                <div class="form-group">
+                    <label>Atau Pilih File Gambar</label>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="file" id="galleryImageFile" accept="image/*" style="flex: 1;">
+                        <button type="button" class="btn btn-secondary" onclick="openCropModal('galleryImageFile')" style="flex: 0 0 auto; padding: 0 15px;">✂️ Crop</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('galleryModal')">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="agendaModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>Tambah Agenda</span>
+                <button class="modal-close" onclick="closeModal('agendaModal')">×</button>
+            </div>
+            <form id="agendaForm">
+                <div class="form-group">
+                    <label>Nama Acara</label>
+                    <input type="text" id="agendaTitle" required>
+                </div>
+                <div class="form-group">
+                    <label>Tanggal</label>
+                    <input type="date" id="agendaDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Waktu</label>
+                    <input type="time" id="agendaTime" required>
+                </div>
+                <div class="form-group">
+                    <label>Lokasi</label>
+                    <input type="text" id="agendaLocation" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('agendaModal')">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const adminData = {
+            news: JSON.parse(localStorage.getItem('adminNews')) || [],
+            teachers: JSON.parse(localStorage.getItem('adminTeachers')) || [],
+            facilities: JSON.parse(localStorage.getItem('adminFacilities')) || [],
+            gallery: JSON.parse(localStorage.getItem('adminGallery')) || [],
+            ppdb: JSON.parse(localStorage.getItem('adminPPDB')) || [],
+            agenda: JSON.parse(localStorage.getItem('adminAgenda')) || [],
+            activities: JSON.parse(localStorage.getItem('adminActivities')) || [],
+        };
+
+        function saveData() {
+            localStorage.setItem('adminNews', JSON.stringify(adminData.news));
+            localStorage.setItem('adminTeachers', JSON.stringify(adminData.teachers));
+            localStorage.setItem('adminFacilities', JSON.stringify(adminData.facilities));
+            localStorage.setItem('adminGallery', JSON.stringify(adminData.gallery));
+            localStorage.setItem('adminPPDB', JSON.stringify(adminData.ppdb));
+            localStorage.setItem('adminAgenda', JSON.stringify(adminData.agenda));
+            localStorage.setItem('adminActivities', JSON.stringify(adminData.activities));
+        }
+
+        function addActivity(type, desc) {
+            adminData.activities.unshift({ type, desc, date: new Date().toLocaleString('id-ID') });
+            if (adminData.activities.length > 10) adminData.activities.pop();
+            saveData();
+            renderActivities();
+        }
+
+        function renderActivities() {
+            const log = document.getElementById('activityLog');
+            if (!adminData.activities.length) {
+                log.innerHTML = '<tr><td colspan="4" style="text-align: center; padding: 40px;"><div class="empty-state"><div class="empty-state-icon">📭</div><div class="empty-state-text">Tidak ada aktivitas</div></div></td></tr>';
+                return;
+            }
+            log.innerHTML = adminData.activities.map(a => `<tr><td><span class="badge badge-success">${a.type}</span></td><td>${a.desc}</td><td>${a.date}</td><td><span class="badge badge-success">Selesai</span></td></tr>`).join('');
+        }
+
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        function updateStats() {
+            document.getElementById('totalPPDB').textContent = adminData.ppdb.length;
+            document.getElementById('totalNews').textContent = adminData.news.length;
+            document.getElementById('totalTeachers').textContent = adminData.teachers.length;
+            document.getElementById('totalFacilities').textContent = adminData.facilities.length;
+        }
+
+        function renderNews() {
+            const table = document.getElementById('newsTable');
+            if (!adminData.news.length) {
+                table.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 40px;"><div class="empty-state"><div class="empty-state-icon">📄</div><div class="empty-state-text">Belum ada berita</div></div></td></tr>';
+                return;
+            }
+            table.innerHTML = adminData.news.map(n => `<tr><td><strong>${n.title}</strong></td><td>${new Date(n.date).toLocaleDateString('id-ID')}</td><td><span class="badge badge-success">${n.category}</span></td><td><span class="badge badge-success">Aktif</span></td><td><button class="delete-btn" onclick="deleteNews(${n.id})">Hapus</button></td></tr>`).join('');
+        }
+
+        function renderTeachers() {
+            const table = document.getElementById('teacherTable');
+            if (!adminData.teachers.length) {
+                table.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 40px;"><div class="empty-state"><div class="empty-state-icon">👤</div><div class="empty-state-text">Belum ada guru</div></div></td></tr>';
+                return;
+            }
+            table.innerHTML = adminData.teachers.map(t => `<tr><td><strong>${t.name}</strong></td><td>${t.subject}</td><td>${t.email}</td><td><span class="badge badge-success">Aktif</span></td><td><button class="delete-btn" onclick="deleteTeacher(${t.id})">Hapus</button></td></tr>`).join('');
+        }
+
+        function renderFacilities() {
+            const grid = document.getElementById('facilityGrid');
+            if (!adminData.facilities.length) {
+                grid.innerHTML = '<div class="empty-state" style="grid-column: 1/-1;"><div class="empty-state-icon">🏢</div><div class="empty-state-text">Belum ada fasilitas</div></div>';
+                return;
+            }
+            grid.innerHTML = adminData.facilities.map(f => `<div class="card">${f.image ? `<img src="${f.image}" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 12px;">` : '<div class="card-icon">🏫</div>'}<div class="card-title">${f.name}</div><div style="font-size: 13px; color: var(--text-secondary); margin-bottom: 12px;">${f.desc.substring(0, 50)}...</div><button class="delete-btn" onclick="deleteFacility(${f.id})" style="width: 100%;">Hapus</button></div>`).join('');
+        }
+
+        function renderGallery() {
+            const grid = document.getElementById('galleryGrid');
+            if (!adminData.gallery.length) {
+                grid.innerHTML = '<div class="empty-state" style="grid-column: 1/-1;"><div class="empty-state-icon">📸</div><div class="empty-state-text">Belum ada galeri</div></div>';
+                return;
+            }
+            grid.innerHTML = adminData.gallery.map(g => `<div class="card"><img src="${g.image}" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 12px;"><div class="card-title">${g.title}</div><button class="delete-btn" onclick="deleteGallery(${g.id})" style="width: 100%;">Hapus</button></div>`).join('');
+        }
+
+        function renderPPDB() {
+            const table = document.getElementById('ppdbTable');
+            if (!adminData.ppdb.length) {
+                table.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 40px;"><div class="empty-state"><div class="empty-state-icon">📝</div><div class="empty-state-text">Belum ada pendaftar</div></div></td></tr>';
+                return;
+            }
+            table.innerHTML = adminData.ppdb.map(p => `<tr><td><strong>${p.studentName}</strong></td><td>${p.parentName}</td><td>${p.phone}</td><td>${new Date(p.date).toLocaleDateString('id-ID')}</td><td><span class="badge badge-success">Diterima</span></td><td><button class="delete-btn" onclick="deletePPDB(${p.id})">Hapus</button></td></tr>`).join('');
+        }
+
+        function renderAgenda() {
+            const table = document.getElementById('agendaTable');
+            if (!adminData.agenda.length) {
+                table.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 40px;"><div class="empty-state"><div class="empty-state-icon">📆</div><div class="empty-state-text">Belum ada agenda</div></div></td></tr>';
+                return;
+            }
+            table.innerHTML = adminData.agenda.map(a => `<tr><td><strong>${a.title}</strong></td><td>${new Date(a.date).toLocaleDateString('id-ID')}</td><td>${a.time}</td><td>${a.location}</td><td><button class="delete-btn" onclick="deleteAgenda(${a.id})">Hapus</button></td></tr>`).join('');
+        }
+
+        function deleteNews(id) {
+            if (confirm('Hapus berita ini?')) {
+                adminData.news = adminData.news.filter(n => n.id !== id);
+                saveData();
+                renderNews();
+                updateStats();
+                addActivity('Berita', 'Hapus berita');
+            }
+        }
+
+        function deleteTeacher(id) {
+            if (confirm('Hapus guru ini?')) {
+                adminData.teachers = adminData.teachers.filter(t => t.id !== id);
+                saveData();
+                renderTeachers();
+                updateStats();
+                addActivity('Guru', 'Hapus guru');
+            }
+        }
+
+        function deleteFacility(id) {
+            if (confirm('Hapus fasilitas ini?')) {
+                adminData.facilities = adminData.facilities.filter(f => f.id !== id);
+                saveData();
+                renderFacilities();
+                updateStats();
+                addActivity('Fasilitas', 'Hapus fasilitas');
+            }
+        }
+
+        function deleteGallery(id) {
+            if (confirm('Hapus foto ini?')) {
+                adminData.gallery = adminData.gallery.filter(g => g.id !== id);
+                saveData();
+                renderGallery();
+                addActivity('Galeri', 'Hapus foto');
+            }
+        }
+
+        function deletePPDB(id) {
+            if (confirm('Hapus pendaftar ini?')) {
+                adminData.ppdb = adminData.ppdb.filter(p => p.id !== id);
+                saveData();
+                renderPPDB();
+                updateStats();
+                addActivity('PPDB', 'Hapus pendaftar');
+            }
+        }
+
+        function deleteAgenda(id) {
+            if (confirm('Hapus agenda ini?')) {
+                adminData.agenda = adminData.agenda.filter(a => a.id !== id);
+                saveData();
+                renderAgenda();
+                addActivity('Agenda', 'Hapus agenda');
+            }
+        }
+
+
+        // Menu switching
+        document.querySelectorAll('.menu-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const section = this.getAttribute('data-section');
+                if (section) {
+                    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+                    document.getElementById(section).classList.add('active');
+                    document.querySelectorAll('.menu-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Sidebar toggle
+        document.getElementById('toggleSidebar').addEventListener('click', () => document.getElementById('sidebar').classList.toggle('active'));
+
+        // Back button
+        document.getElementById('backBtn').addEventListener('click', () => window.location.href = 'index.html');
+
+        // Logout
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('adminLoggedIn');
+            localStorage.removeItem('adminUser');
+            window.location.href = 'admin-login.html';
+        });
+
+        // Helper function to convert file to base64
+        function fileToBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // News form
+        document.getElementById('addNewsBtn').addEventListener('click', () => {
+            document.getElementById('newsForm').reset();
+            openModal('newsModal');
+        });
+
+        document.getElementById('newsForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            let imageData = document.getElementById('newsImage').value;
+            const imageFile = document.getElementById('newsImageFile').files[0];
+            
+            if (imageFile) {
+                imageData = await fileToBase64(imageFile);
+            }
+            
+            adminData.news.unshift({
+                id: Date.now(),
+                title: document.getElementById('newsTitle').value,
+                category: document.getElementById('newsCategory').value,
+                content: document.getElementById('newsContent').value,
+                image: imageData,
+                date: new Date().toISOString(),
+            });
+            saveData();
+            renderNews();
+            updateStats();
+            addActivity('Berita', 'Tambah berita');
+            closeModal('newsModal');
+            alert('Berita ditambahkan!');
+        });
+
+        // Teacher form
+        document.getElementById('addTeacherBtn').addEventListener('click', () => {
+            document.getElementById('teacherForm').reset();
+            openModal('teacherModal');
+        });
+
+        document.getElementById('teacherForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            let imageData = document.getElementById('teacherImage').value;
+            const imageFile = document.getElementById('teacherImageFile').files[0];
+            
+            if (imageFile) {
+                imageData = await fileToBase64(imageFile);
+            }
+            
+            adminData.teachers.unshift({
+                id: Date.now(),
+                name: document.getElementById('teacherName').value,
+                subject: document.getElementById('teacherSubject').value,
+                email: document.getElementById('teacherEmail').value,
+                education: document.getElementById('teacherEducation').value,
+                image: imageData,
+            });
+            saveData();
+            renderTeachers();
+            updateStats();
+            addActivity('Guru', 'Tambah guru');
+            closeModal('teacherModal');
+            alert('Guru ditambahkan!');
+        });
+
+        // Facility form
+        document.getElementById('addFacilityBtn').addEventListener('click', () => {
+            document.getElementById('facilityForm').reset();
+            openModal('facilityModal');
+        });
+
+        document.getElementById('facilityForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            let imageData = document.getElementById('facilityImage').value;
+            const imageFile = document.getElementById('facilityImageFile').files[0];
+            
+            if (imageFile) {
+                imageData = await fileToBase64(imageFile);
+            }
+            
+            adminData.facilities.unshift({
+                id: Date.now(),
+                name: document.getElementById('facilityName').value,
+                desc: document.getElementById('facilityDesc').value,
+                features: document.getElementById('facilityFeatures').value,
+                image: imageData,
+            });
+            saveData();
+            renderFacilities();
+            updateStats();
+            addActivity('Fasilitas', 'Tambah fasilitas');
+            closeModal('facilityModal');
+            alert('Fasilitas ditambahkan!');
+        });
+
+        // Gallery form
+        document.getElementById('addGalleryBtn').addEventListener('click', () => {
+            document.getElementById('galleryForm').reset();
+            openModal('galleryModal');
+        });
+
+        document.getElementById('galleryForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            let imageData = document.getElementById('galleryImage').value;
+            const imageFile = document.getElementById('galleryImageFile').files[0];
+            
+            if (imageFile) {
+                imageData = await fileToBase64(imageFile);
+            }
+            
+            adminData.gallery.unshift({
+                id: Date.now(),
+                title: document.getElementById('galleryTitle').value,
+                category: document.getElementById('galleryCategory').value,
+                image: imageData,
+            });
+            saveData();
+            renderGallery();
+            addActivity('Galeri', 'Tambah foto');
+            closeModal('galleryModal');
+            alert('Foto ditambahkan!');
+        });
+
+        // Agenda form
+        document.getElementById('addAgendaBtn').addEventListener('click', () => {
+            document.getElementById('agendaForm').reset();
+            openModal('agendaModal');
+        });
+
+        document.getElementById('agendaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            adminData.agenda.unshift({
+                id: Date.now(),
+                title: document.getElementById('agendaTitle').value,
+                date: document.getElementById('agendaDate').value,
+                time: document.getElementById('agendaTime').value,
+                location: document.getElementById('agendaLocation').value,
+            });
+            saveData();
+            renderAgenda();
+            addActivity('Agenda', 'Tambah agenda');
+            closeModal('agendaModal');
+            alert('Agenda ditambahkan!');
+        });
+
+        // Settings
+        document.getElementById('settingsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const settings = {
+                schoolName: document.getElementById('schoolName').value,
+                schoolEmail: document.getElementById('schoolEmail').value,
+                schoolPhone: document.getElementById('schoolPhone').value,
+                schoolWhatsapp: document.getElementById('schoolWhatsapp').value,
+                schoolAddress: document.getElementById('schoolAddress').value,
+                schoolMotto: document.getElementById('schoolMotto').value,
+            };
+            localStorage.setItem('adminSettings', JSON.stringify(settings));
+            addActivity('Settings', 'Update pengaturan');
+            alert('Pengaturan disimpan!');
+        });
+
+        const settings = JSON.parse(localStorage.getItem('adminSettings')) || {};
+        if (settings.schoolName) {
+            document.getElementById('schoolName').value = settings.schoolName;
+            document.getElementById('schoolEmail').value = settings.schoolEmail || '';
+            document.getElementById('schoolPhone').value = settings.schoolPhone || '';
+            document.getElementById('schoolWhatsapp').value = settings.schoolWhatsapp || '';
+            document.getElementById('schoolAddress').value = settings.schoolAddress || '';
+            document.getElementById('schoolMotto').value = settings.schoolMotto || '';
+        }
+
+        // Initial render
+        renderNews();
+        renderTeachers();
+        renderFacilities();
+        renderGallery();
+        renderPPDB();
+        renderAgenda();
+        renderActivities();
+        updateStats();
+
+        // Security check
+        if (!localStorage.getItem('adminLoggedIn')) {
+            window.location.href = 'admin-login.html';
+            throw new Error('Unauthorized access attempt');
+        }
+
+        // Session timeout check (30 minutes)
+        const loginTime = parseInt(localStorage.getItem('adminLoginTime')) || 0;
+        const currentTime = Date.now();
+        const sessionTimeout = 30 * 60 * 1000; // 30 minutes in milliseconds
+        
+        if (currentTime - loginTime > sessionTimeout) {
+            localStorage.removeItem('adminLoggedIn');
+            localStorage.removeItem('adminUser');
+            localStorage.removeItem('adminLoginTime');
+            window.location.href = 'admin-login.html';
+            throw new Error('Session expired');
+        }
+        
+
+        // User display
+        const user = localStorage.getItem('adminUser');
+        if (user) {
+            const div = document.createElement('div');
+            div.style.cssText = 'position: fixed; bottom: 20px; right: 20px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white; padding: 12px 16px; border-radius: 8px; font-size: 12px; z-index: 100; font-weight: 600; box-shadow: var(--shadow-lg);';
+            div.textContent = `👤 ${user}`;
+            document.body.appendChild(div);
+        }
+
+        // ===== IMAGE CROPPER =====
+        let cropper = null;
+        let currentImageInput = null;
+
+        const cropModal = document.createElement('div');
+        cropModal.id = 'cropModal';
+        cropModal.innerHTML = `
+            <div id="cropContainer">
+                <h3 style="color: var(--text-primary); margin-bottom: 15px; font-weight: 600;">Atur Crop Gambar</h3>
+                <img id="cropImage" src="" style="max-width: 100%; height: auto;">
+                <div class="crop-controls">
+                    <button class="btn-secondary" onclick="rotateCropper(-45)">⟲ Putar Kiri</button>
+                    <button class="btn-secondary" onclick="rotateCropper(45)">Putar Kanan ⟳</button>
+                    <button class="btn-secondary" onclick="flipCropperX()">🔄 Flip H</button>
+                    <button class="btn-secondary" onclick="flipCropperY()">⇅ Flip V</button>
+                    <button class="btn-secondary" onclick="resetCropper()">↻ Reset</button>
+                    <button class="btn-primary" onclick="applyCrop()">✓ Terapkan Crop</button>
+                    <button class="btn-secondary" onclick="closeCropModal()">✕ Batal</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(cropModal);
+
+        function rotateCropper(degree) {
+            if (cropper) cropper.rotate(degree);
+        }
+
+        function flipCropperX() {
+            if (cropper) cropper.scaleX(cropper.getData().scaleX === 1 ? -1 : 1);
+        }
+
+        function flipCropperY() {
+            if (cropper) cropper.scaleY(cropper.getData().scaleY === 1 ? -1 : 1);
+        }
+
+        function resetCropper() {
+            if (cropper) cropper.reset();
+        }
+
+        function applyCrop() {
+            if (!cropper) return;
+            const canvas = cropper.getCroppedCanvas();
+            const croppedImage = canvas.toDataURL('image/jpeg', 0.9);
+            if (currentImageInput) {
+                document.getElementById(currentImageInput).value = croppedImage;
+                const event = new Event('input', { bubbles: true });
+                document.getElementById(currentImageInput).dispatchEvent(event);
+            }
+            closeCropModal();
+        }
+
+        function closeCropModal() {
+            document.getElementById('cropModal').classList.remove('active');
+            if (cropper) {
+                cropper.destroy();
+                cropper = null;
+            }
+        }
+
+        function openCropModal(inputId) {
+            const fileInput = document.getElementById(inputId);
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const cropImage = document.getElementById('cropImage');
+                    cropImage.src = e.target.result;
+                    document.getElementById('cropModal').classList.add('active');
+                    currentImageInput = inputId;
+
+                    if (cropper) {
+                        cropper.destroy();
+                    }
+
+                    setTimeout(() => {
+                        cropper = new Cropper(cropImage, {
+                            aspectRatio: NaN,
+                            autoCropArea: 0.8,
+                            responsive: true,
+                            restore: true,
+                            guides: true,
+                            center: true,
+                            highlight: true,
+                            cropBoxMovable: true,
+                            cropBoxResizable: true,
+                            toggleDragModeOnDblclick: true,
+                        });
+                    }, 100);
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
+    </script>
+</body>
+
+</html>

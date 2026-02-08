@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Berita dan Pengumuman SD Negeri Kota 01 - Update Terbaru Sekolah">
+    <link href="./input.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <title>Berita & Pengumuman - SD Negeri Kota 01</title>
+</head>
+
+<body class="font-body antialiased">
+    <!-- Header -->
+    <header class="w-full fixed top-0 z-50 shadow-lg transition-transform duration-300">
+        <!-- Top Bar -->
+        <div class="bg-eduBlue-main text-white py-2 hidden md:block">
+            <div class="container mx-auto px-6 flex justify-between items-center text-xs font-medium">
+                <div class="flex items-center space-x-6">
+                    <a href="https://wa.me/628123456789"
+                        class="flex items-center hover:text-sunJoy transition-colors duration-300">
+                        <span class="mr-2">📞</span> Chat Admin: 0812-3456-7890
+                    </a>
+                    <div class="flex items-center">
+                        <span class="w-2 h-2 bg-careGreen rounded-full mr-2 animate-pulse"></span>
+                        Sekolah Buka (Tutup 14:00)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="bg-white border-b border-gray-100">
+            <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+                <a href="index.html" class="flex items-center group">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-eduBlue-main to-eduBlue-light rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                        <span class="text-white font-bold text-xl">SD</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="font-display font-bold text-eduBlue-main text-xl leading-none">SD NEGERI KOTA 01</h1>
+                        <span class="text-[10px] text-gray-500 font-medium tracking-widest uppercase mt-1">Unggul &
+                            Berkarakter</span>
+                    </div>
+                </a>
+
+                <ul class="hidden lg:flex items-center space-x-8">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="about.html" class="nav-link">Tentang</a></li>
+                    <li><a href="teachers.html" class="nav-link">Guru</a></li>
+                    <li><a href="facilities.html" class="nav-link">Fasilitas</a></li>
+                    <li><a href="news.html" class="nav-link">Berita</a></li>
+                    <li><a href="gallery.html" class="nav-link">Galeri</a></li>
+                    <li><a href="index.html#agenda" class="nav-link">Agenda</a></li>
+                    <li><a href="index.html#kontak" class="nav-link">Kontak</a></li>
+                </ul>
+
+                <div class="flex items-center space-x-4">
+                    <a href="index.html#ppdb"
+                        class="hidden sm:flex items-center bg-gradient-to-r from-sunJoy to-yellow-400 hover:from-yellow-400 hover:to-sunJoy text-softBlack font-bold py-3 px-6 rounded-xl shadow-lg shadow-sunJoy/30 transition-all hover:-translate-y-1 active:scale-95">
+                        Daftar PPDB
+                        <span class="ml-2">→</span>
+                    </a>
+                    <button id="mobileMenuButton"
+                        class="lg:hidden text-eduBlue-main text-3xl hover:scale-110 transition-transform">☰</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="lg:hidden fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300">
+            <div id="mobileMenuPanel"
+                class="fixed right-0 top-0 h-full w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3 class="font-display font-bold text-eduBlue-main text-xl">Menu</h3>
+                        <button id="closeMobileMenu" class="text-gray-500 hover:text-eduBlue-main text-3xl">×</button>
+                    </div>
+                    <nav class="space-y-4">
+                        <a href="index.html" class="mobile-nav-link">Beranda</a>
+                        <a href="about.html" class="mobile-nav-link">Tentang</a>
+                        <a href="teachers.html" class="mobile-nav-link">Guru</a>
+                        <a href="facilities.html" class="mobile-nav-link">Fasilitas</a>
+                        <a href="news.html" class="mobile-nav-link">Berita</a>
+                        <a href="gallery.html" class="mobile-nav-link">Galeri</a>
+                        <a href="index.html#agenda" class="mobile-nav-link">Agenda</a>
+                        <a href="index.html#kontak" class="mobile-nav-link">Kontak</a>
+                        <div class="pt-4 border-t border-gray-200">
+                            <a href="index.html#ppdb"
+                                class="block bg-gradient-to-r from-sunJoy to-yellow-400 text-softBlack font-bold py-3 px-6 rounded-xl text-center shadow-lg">
+                                Daftar PPDB →
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="pt-32 pb-8 bg-gradient-to-r from-eduBlue-main to-eduBlue-light">
+        <div class="container mx-auto px-6">
+            <nav class="flex items-center space-x-2 text-white text-sm">
+                <a href="index.html" class="hover:underline">Home</a>
+                <span>/</span>
+                <span>Berita & Pengumuman</span>
+            </nav>
+            <h1 class="font-display text-4xl font-bold text-white mt-4">Berita & Pengumuman</h1>
+            <p class="text-white/90 mt-2">Informasi terbaru dari SD Negeri Kota 01</p>
+        </div>
+    </div>
+
+    <!-- News Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Main Featured News -->
+                <div class="lg:col-span-2">
+                    <article class="news-card group mb-8">
+                        <div
+                            class="relative overflow-hidden rounded-xl mb-6 h-64 bg-gradient-to-br from-eduBlue-light/30 to-sunJoy/30 flex items-center justify-center">
+                            <div class="text-center p-6">
+                                <div class="text-6xl mb-3">📢</div>
+                                <p class="font-semibold text-gray-700">Penerimaan Peserta Didik Baru</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-center text-sm text-gray-500 mb-3">
+                                <span>📅</span>
+                                <span class="ml-2">15 Januari 2026</span>
+                                <span class="mx-3">•</span>
+                                <span>👤 Admin</span>
+                            </div>
+                            <h2
+                                class="font-display text-3xl font-bold text-gray-900 group-hover:text-eduBlue-main transition-colors mb-4">
+                                Pendaftaran PPDB 2026/2027 Dibuka
+                            </h2>
+                            <p class="text-gray-600 text-lg leading-relaxed mb-4">
+                                Kami dengan senang hati mengumumkan bahwa pendaftaran peserta didik baru untuk tahun ajaran
+                                2026/2027 telah dibuka. Dapatkan early bird discount hingga 20% untuk pendaftar awal!
+                            </p>
+                            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                                Berikut adalah informasi lengkap mengenai persyaratan dan mekanisme pendaftaran PPDB 2026/2027:
+                            </p>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
+                                <li>Batas usia: 6 tahun pada tanggal 1 Juli 2026</li>
+                                <li>Pendaftaran dapat dilakukan secara online melalui website sekolah</li>
+                                <li>Early bird discount untuk pendaftar sebelum akhir Januari 2026</li>
+                                <li>Waktu daftar ulang: 10-20 Februari 2026</li>
+                                <li>Pengumuman hasil seleksi: 5 Februari 2026</li>
+                            </ul>
+                            <a href="#"
+                                class="inline-flex items-center text-eduBlue-main hover:text-eduBlue-dark font-semibold transition-colors">
+                                Baca Selengkapnya
+                                <span class="ml-2">→</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="bg-eduBlue-light/10 rounded-2xl p-6 mb-6">
+                        <h3 class="font-display text-xl font-bold text-gray-900 mb-4">📰 Berita Terbaru</h3>
+                        <div class="space-y-4">
+                            <a href="#"
+                                class="block p-3 hover:bg-white rounded-lg transition-colors group">
+                                <p class="text-sm text-gray-500 mb-1">20 Jan 2026</p>
+                                <p class="font-semibold text-gray-900 group-hover:text-eduBlue-main transition-colors">
+                                    Olimpiade Sains Nasional
+                                </p>
+                            </a>
+                            <a href="#"
+                                class="block p-3 hover:bg-white rounded-lg transition-colors group">
+                                <p class="text-sm text-gray-500 mb-1">18 Jan 2026</p>
+                                <p class="font-semibold text-gray-900 group-hover:text-eduBlue-main transition-colors">
+                                    Festival Seni Sekolah
+                                </p>
+                            </a>
+                            <a href="#"
+                                class="block p-3 hover:bg-white rounded-lg transition-colors group">
+                                <p class="text-sm text-gray-500 mb-1">15 Jan 2026</p>
+                                <p class="font-semibold text-gray-900 group-hover:text-eduBlue-main transition-colors">
+                                    Buka Puasa Bersama
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-sunJoy/10 rounded-2xl p-6">
+                        <h3 class="font-display text-xl font-bold text-gray-900 mb-4">⏰ Pengumuman Penting</h3>
+                        <div class="space-y-3">
+                            <div class="p-3 bg-white rounded-lg border-l-4 border-sunJoy">
+                                <p class="text-sm font-semibold text-gray-900">Liburan Semester</p>
+                                <p class="text-xs text-gray-600">1-15 Feb 2026</p>
+                            </div>
+                            <div class="p-3 bg-white rounded-lg border-l-4 border-careGreen">
+                                <p class="text-sm font-semibold text-gray-900">Rapat Orang Tua</p>
+                                <p class="text-xs text-gray-600">20 Jan 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All News Articles Grid -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-8">Semua Berita</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- News 1 -->
+                <article class="news-card group">
+                    <div
+                        class="relative overflow-hidden rounded-xl mb-4 h-48 bg-gradient-to-br from-eduBlue-light/30 to-sunJoy/30 flex items-center justify-center">
+                        <div class="text-5xl">📢</div>
+                    </div>
+                    <div>
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>📅 15 Januari</span>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-gray-900 group-hover:text-eduBlue-main transition-colors mb-2">
+                            Pendaftaran PPDB 2026/2027 Dibuka
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Kami membuka pendaftaran peserta didik baru untuk tahun ajaran 2026/2027. Dapatkan early bird discount hingga 20%.
+                        </p>
+                        <a href="#"
+                            class="inline-flex items-center text-eduBlue-main hover:text-eduBlue-dark font-semibold text-sm">
+                            Baca Selengkapnya
+                            <span class="ml-1">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- News 2 -->
+                <article class="news-card group">
+                    <div
+                        class="relative overflow-hidden rounded-xl mb-4 h-48 bg-gradient-to-br from-careGreen/30 to-eduBlue-light/30 flex items-center justify-center">
+                        <div class="text-5xl">🏆</div>
+                    </div>
+                    <div>
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>📅 10 Januari</span>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-gray-900 group-hover:text-eduBlue-main transition-colors mb-2">
+                            Juara 1 Olimpiade Sains Nasional
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Siswa kami berhasil meraih medali emas dalam Olimpiade Sains Nasional tingkat provinsi kategori matematika.
+                        </p>
+                        <a href="#"
+                            class="inline-flex items-center text-eduBlue-main hover:text-eduBlue-dark font-semibold text-sm">
+                            Baca Selengkapnya
+                            <span class="ml-1">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- News 3 -->
+                <article class="news-card group">
+                    <div
+                        class="relative overflow-hidden rounded-xl mb-4 h-48 bg-gradient-to-br from-sunJoy/30 to-pink-200/30 flex items-center justify-center">
+                        <div class="text-5xl">🎭</div>
+                    </div>
+                    <div>
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>📅 5 Januari</span>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-gray-900 group-hover:text-eduBlue-main transition-colors mb-2">
+                            Penampilan Seni di Festival Sekolah
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Penampilan memukau dari ekstrakurikuler tari dan musik pada Festival Seni Sekolah Dasar se-Kota.
+                        </p>
+                        <a href="#"
+                            class="inline-flex items-center text-eduBlue-main hover:text-eduBlue-dark font-semibold text-sm">
+                            Baca Selengkapnya
+                            <span class="ml-1">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- News 4 -->
+                <article class="news-card group">
+                    <div
+                        class="relative overflow-hidden rounded-xl mb-4 h-48 bg-gradient-to-br from-purple-300/30 to-blue-300/30 flex items-center justify-center">
+                        <div class="text-5xl">📚</div>
+                    </div>
+                    <div>
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>📅 2 Januari</span>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-gray-900 group-hover:text-eduBlue-main transition-colors mb-2">
+                            Peluncuran Program Literasi Digital
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Sekolah meluncurkan program literasi digital untuk meningkatkan kemampuan teknologi siswa.
+                        </p>
+                        <a href="#"
+                            class="inline-flex items-center text-eduBlue-main hover:text-eduBlue-dark font-semibold text-sm">
+                            Baca Selengkapnya
+                            <span class="ml-1">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- News 5 -->
+                <article class="news-card group">
+                    <div
+                        class="relative overflow-hidden rounded-xl mb-4 h-48 bg-gradient-to-br from-green-300/30 to-teal-300/30 flex items-center justify-center">
+                        <div class="text-5xl">🌱</div>
+                    </div>
+                    <div>
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>📅 28 Desember</span>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-gray-900 group-hover:text-eduBlue-main transition-colors mb-2">
+                            Program Penghijauan Sekolah
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Siswa dan guru secara bersama-sama melakukan program penghijauan di lingkungan sekolah.
+                        </p>
+                        <a href="#"
+                            class="inline-flex items-center text-eduBlue-main hover:text-eduBlue-dark font-semibold text-sm">
+                            Baca Selengkapnya
+                            <span class="ml-1">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- News 6 -->
+                <article class="news-card group">
+                    <div
+                        class="relative overflow-hidden rounded-xl mb-4 h-48 bg-gradient-to-br from-pink-300/30 to-red-300/30 flex items-center justify-center">
+                        <div class="text-5xl">❤️</div>
+                    </div>
+                    <div>
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>📅 25 Desember</span>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-gray-900 group-hover:text-eduBlue-main transition-colors mb-2">
+                            Program Donor Darah Sosial
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Sekolah mengadakan program donor darah untuk mendukung kegiatan sosial masyarakat.
+                        </p>
+                        <a href="#"
+                            class="inline-flex items-center text-eduBlue-main hover:text-eduBlue-dark font-semibold text-sm">
+                            Baca Selengkapnya
+                            <span class="ml-1">→</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-eduBlue-main to-eduBlue-light text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h2 class="font-display text-4xl font-bold mb-6">Jadilah Bagian dari Kami</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+                Ikuti perkembangan terbaru sekolah kami melalui berbagai channel komunikasi.
+            </p>
+            <a href="index.html#ppdb"
+                class="inline-block bg-sunJoy hover:bg-yellow-400 text-softBlack font-bold py-4 px-8 rounded-xl shadow-lg transition-all hover:-translate-y-1 active:scale-95">
+                Daftar Sekarang
+                <span class="ml-2">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-eduBlue-main to-eduBlue-light rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-xl">SD</span>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-white text-xl">SD NEGERI KOTA 01</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Unggul & Berkarakter</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-bold text-white mb-4">Link Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-sunJoy transition-colors">Tentang</a></li>
+                        <li><a href="teachers.html" class="hover:text-sunJoy transition-colors">Guru</a></li>
+                        <li><a href="facilities.html" class="hover:text-sunJoy transition-colors">Fasilitas</a></li>
+                        <li><a href="gallery.html" class="hover:text-sunJoy transition-colors">Galeri</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-bold text-white mb-4">Kontak</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>📞 (021) 1234-5678</li>
+                        <li>📱 0812-3456-7890</li>
+                        <li>📍 Jl. Pendidikan No. 123</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p class="text-gray-400">© 2026 SD Negeri Kota 01. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="privacy-policy.html" class="hover:text-sunJoy transition-colors">Privacy Policy</a>
+                    <a href="terms-and-conditions.html" class="hover:text-sunJoy transition-colors">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop"
+        class="fixed bottom-8 right-8 w-12 h-12 bg-eduBlue-main hover:bg-eduBlue-dark text-white rounded-full shadow-lg flex items-center justify-center transition-all opacity-0 pointer-events-none z-40">
+        ↑
+    </button>
+
+    <script>
+        // Mobile Menu
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+            mobileMenuPanel.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+            mobileMenuPanel.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                setTimeout(() => {
+                    mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                    mobileMenuPanel.classList.add('translate-x-full');
+                    document.body.style.overflow = '';
+                }, 300);
+            });
+        });
+
+        // Back to Top
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>
